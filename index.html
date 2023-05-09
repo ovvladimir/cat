@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="VO">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Личный сайт Кота</title>
+    <link rel="icon" type="image/x-icon" href="icon/favicon.ico">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap-5.2.3/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3/bootstrap-icons.css">
+    <!-- Дополнительно - для изменения цвета темы -->
+    <link rel="stylesheet" href="css/color-theme.css">
+    <script src="js/color-theme.js"></script>
+    <style>
+      a {text-decoration: none;}
+  
+      h1 {text-shadow: 1px 1px white, 2px 2px white, -1px -1px white, -2px -2px white, -1px 1px white, 1px -1px white, -2px 2px white, 2px -2px white, -3px -3px 4px rgba(0,0,0,.3), -3px 3px 4px rgba(0,0,0,.3), 3px 3px 4px rgba(0,0,0,.3), 3px -3px 4px rgba(0,0,0,.3);}
+      h1 {font-size: 5.9vmin;}
+      h2 {font-size: 4.0vmin;}
+      p {font-size: 4.0vmin;}
+      i {font-size: 3.0vmin;}
+  
+      #meow p span {
+        display: flex;
+        display: inline-block;
+        font-size: 5vw;
+      }
+      body:hover span { 
+        animation: bounce .6s;
+      }
+      @keyframes bounce {
+          0%, 100% { 
+          transform: translate(0); 
+        }
+          25% { 
+          transform: rotateX(20deg) translateY(2px) rotate(-3deg); 
+        }
+          50% { 
+          transform: translateY(-20px) rotate(3deg) scale(1.1);  
+        }
+      }
+      #meow p span:nth-child(4n) { 
+          color: hsl(50, 75%, 55%); 
+          text-shadow: 1px 1px hsl(50, 75%, 45%), 2px 2px hsl(50, 45%, 45%), 3px 3px hsl(50, 45%, 45%), 4px 4px hsl(50, 75%, 45%); 
+      }
+      #meow p span:nth-child(4n-1) { 
+          color: hsl(135, 35%, 55%); 
+          text-shadow: 1px 1px hsl(135, 35%, 45%), 2px 2px hsl(135, 35%, 45%), 3px 3px hsl(135, 35%, 45%), 4px 4px hsl(135, 35%, 45%); 
+      }
+      #meow p span:nth-child(4n-2) { 
+          color: hsl(155, 35%, 60%); 
+          text-shadow: 1px 1px hsl(155, 25%, 50%), 2px 2px hsl(155, 25%, 50%), 3px 3px hsl(155, 25%, 50%), 4px 4px hsl(140, 25%, 50%); 
+      }
+      #meow p span:nth-child(4n-3) { 
+          color: hsl(30, 65%, 60%); 
+          text-shadow: 1px 1px hsl(30, 45%, 50%), 2px 2px hsl(30, 45%, 50%), 3px 3px hsl(30, 45%, 50%), 4px 4px hsl(30, 45%, 50%); 
+      }
+      </style>
+  </head>
+
+  <body>
+    <header class="bg-info py-4">
+      <div class="container text-center text-light">
+        <div class="row align-items-center">
+
+          <div class="col-md-auto">
+            <a href="https://github.com/ovvladimir/cat" target="_blank">
+              <img class="rounded-circle border border-2 border-white" src="https://github.com/ovvladimir.png" alt="OV" width="40" height="40">
+            </a>
+          </div>
+
+          <div class="col mt-1"><!-- align-self-center -->
+            <h2>
+                <a href="http://kireineko.ru/year-2016" target="_blank">Моя семья</a> <span>/</span>
+                <a href="загадки.html" class="link">Загадки</a> <span>/</span>
+                <a href="угадайка.html" class="link">Угадай число</a> <span>/</span>
+                <a href="index.html" class="link">Главная</a>
+            </h2>
+          </div>
+
+          <div class="col-md-auto navbar navbar-expand-lg bd-navbar p-0">
+            <nav class="container bd-gutter flex-wrap flex-lg-nowrap justify-content-center" aria-label="main navigation">
+              <li class="nav-item dropdown" style="list-style-type: none;">
+                <button class="btn btn-link nav-link dropdown-toggle d-flex align-items-center text-white" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown">
+                  <i id="icon-active" class="bi bi-brightness-high-fill mb-3 fs-2"></i>
+                  <span class="d-lg-none ms-1" id="bd-theme-text"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+                  <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
+                      <i class="bi bi-brightness-high-fill opacity-50 me-2 mb-2"><use href="bi-brightness-high-fill"></use></i>
+                      day&ensp;&ensp;
+                      <i class="bi bi-check2 ms-3 mb-2 d-none"></i>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                      <i class="bi bi-moon-stars-fill opacity-50 me-2 mb-2"><use href="bi-moon-stars-fill"></use></i>
+                      night
+                      <i class="bi bi-check2 ms-3 mb-2 d-none"></i>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid pb-2">
+      <div class="row">
+
+        <div class="col-12 text-center p-5 text-primary">
+          <h1>Личный сайт Кота</h1>
+        </div>
+
+        <div class="col-4 px-1 text-center">
+          <img class="img-fluid rounded-pill border border-5 border-secondary shadow" src="img/cat.jpg" style="width: 80%; height:auto;"
+            onmouseover="this.style.width='100%'"
+            onmouseout="this.style.width='80%'"
+            alt="увеличение фотографии">
+
+          <div class="mt-5" id="meow">
+            <p onclick="soundClick()">
+              <span>М</span><span>Я</span><span>У</span><span>!</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-8 text-secondary">
+          <p>Привет! Меня зовут Шок! Я дружу с Домовым. Меня кормят сметаной и я сплю в постели хозяев. На фотографиях внизу мои сестра с братом (нас родилось сразу семь котиков) и мама Your Majesty Liliana. Мое полное имя Kireineko's Falcon. Порода британский короткошерстный. Окрас - шоколад. Родился 10 ноября 2016 года в г. Владивосток.</p>
+          <p>Вообще-то я главный в доме. По ночам люблю просматривать сайт:<br>
+          <a class="btn btn btn-primary btn-lg d-grid gap-2 col-6 mx-auto mt-1" href="http://kireineko.ru/year-2016" target="_blank" role="button">Моя семья</a></p>
+          <p>На моем сайте я могу с вами поиграть. Выбирайте:<br>
+          <a class="btn btn btn-primary btn-lg m-1" href="загадки.html" role="button">Загадки</a>
+          <a class="btn btn btn-primary btn-lg m-1" href="угадайка.html" role="button">Угадай число</a></p>
+          <img class="rounded-5 border border-5 border-secondary shadow" style="max-width: 30%; height:auto;" src="img/cat2.jpg" alt="фотография">
+          <img class="img-fluid ms-5 rounded-5 border border-5 border-secondary shadow" style="max-width: 30%; height:auto;" src="img/cat1.jpg" alt="фотография">
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      <div class="container-fluid bg-danger">
+        <div class="d-flex justify-content-between p-4 text-white">
+          <i class="my-1">&copy; 2016 Company, «CAT». All rights reserved.</i>
+          <ul class="list-unstyled d-flex gap-3">
+            <li><a class="link-dark" href="https://github.com/ovvladimir" target="_blank"><i class="bi bi-github text-white"></i></a></li>
+            <li><a class="link-dark" href="#"><i class="bi bi-twitter text-white"></i></a></li>
+            <li><a class="link-dark" href="#"><i class="bi bi-instagram text-white"></i></a></li>
+            <li><a class="link-dark" href="#"><i class="bi bi-facebook text-white"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="fixed-bottom text-end text-primary">
+      <i id="up" class="bi bi-arrow-up-square m-2 fs-1" role="button" style="opacity: 0;"></i>
+    </div>
+
+    <script type="text/javascript">
+      function soundClick() {
+        /*h6:hover span {*/
+        var audio = new Audio();
+        audio.src = 'img/cat.mp3';
+        audio.autoplay = true;
+      }
+      // Кнопка прокрутки страницы вверх
+      window.onload = function() {
+        let topBtn = document.getElementById('up');
+        topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+        window.onscroll = () => window.scrollY > 50 ? topBtn.style.opacity = 0.75 : topBtn.style.opacity = 0
+      }
+    </script>
+
+    <script src="bootstrap-5.2.3/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>
