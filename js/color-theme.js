@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('theme', theme)
 
       showActiveTheme(theme, true)
-      const formControl = document.querySelector('.container-fluid');
+      const formControl = document.querySelector('.main');
       if (theme === 'light') {formControl.style.backgroundColor = '#f8f9fa'; formControl.style.color = '#212529';}
       else if (theme === 'dark') {formControl.style.backgroundColor = '#212529'; formControl.style.color = '#f8f9fa';};
     })
