@@ -14,6 +14,7 @@
     <!-- Дополнительно - для изменения цвета темы -->
     <link rel="stylesheet" href="css/color-theme.css">
     <script src="js/color-theme.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
     <style>
       a {text-decoration: none;}
   
@@ -112,6 +113,10 @@
     </header>
 
     <div class="container-fluid main pb-2">
+
+      <p id="scrollUp" class="position-fixed bottom-50 end-0 fs-1" role="button" title="Вверх">&#8679;</p>
+      <p id="scrollDown" class="position-fixed top-50 end-0 fs-1" role="button" title="Вниз">&#8681;</p>
+
       <div class="row">
 
         <div class="col-12 text-center p-5 text-primary">
@@ -158,10 +163,18 @@
         </div>
       </div>
     </footer>
-    <div class="fixed-bottom text-primary">
+    <!--div class="fixed-bottom text-primary">
       <i id="up" class="bi bi-arrow-up-square fs-1 me-2 position-fixed bottom-0 end-0" role="button" style="opacity: 0;"></i>
     </div>
 
+    <script type="text/javascript">
+      // Кнопка прокрутки страницы вверх
+      window.onload = function() {
+        let topBtn = document.getElementById('up');
+        topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+        window.onscroll = () => window.scrollY > 50 ? topBtn.style.opacity = 0.75 : topBtn.style.opacity = 0
+      }
+    </script-->
     <script type="text/javascript">
       function soundClick() {
         /*h6:hover span {*/
@@ -169,12 +182,23 @@
         audio.src = 'img/cat.mp3';
         audio.autoplay = true;
       }
-      // Кнопка прокрутки страницы вверх
-      window.onload = function() {
-        let topBtn = document.getElementById('up');
-        topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
-        window.onscroll = () => window.scrollY > 50 ? topBtn.style.opacity = 0.75 : topBtn.style.opacity = 0
-      }
+    </script>
+    <script>
+      // Прокрутка страницы вверх и вниз
+      let forAll = 100
+      if ($(window).scrollTop() >= forAll) $("#scrollUp").fadeIn('slow');
+      $(window).scroll(function() {
+          if ($(window).scrollTop() <= forAll) $("#scrollUp").fadeOut('slow');
+          else $("#scrollUp").fadeIn('slow');
+      });
+    
+      if ($(window).scrollTop() + $(window).height() <= $(document).height() - forAll) $("#scrollDown").fadeIn('slow');
+      $(window).scroll(function() {
+          if ($(window).scrollTop() + $(window).height() >= $(document).height() - forAll) $("#scrollDown").fadeOut('slow');
+          else $("#scrollDown").fadeIn('slow');
+      });
+      $("#scrollUp").click(function(){$("html,body").animate({scrollTop: 0}, forAll)});
+      $("#scrollDown").click(function(){$("html,body").animate({scrollTop: $(document).height()}, forAll)});
     </script>
 
     <script src="bootstrap-5.2.3/bootstrap.bundle.min.js"></script>
