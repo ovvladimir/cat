@@ -14,7 +14,7 @@
     <!-- Дополнительно - для изменения цвета темы -->
     <link rel="stylesheet" href="css/color-theme.css">
     <script src="js/color-theme.js"></script>
-    <script src="js/jquery-3.6.4.min.js"></script>
+    <!-- script src="js/jquery-3.6.4.min.js"></script -->
     <style>
       a {text-decoration: none;}
       h1 {text-shadow: 1px 1px white, 2px 2px white, -1px -1px white, -2px -2px white, -1px 1px white, 1px -1px white, -2px 2px white, 2px -2px white, -3px -3px 4px rgba(0,0,0,.3), -3px 3px 4px rgba(0,0,0,.3), 3px 3px 4px rgba(0,0,0,.3), 3px -3px 4px rgba(0,0,0,.3);}
@@ -181,8 +181,25 @@
         audio.src = 'img/cat.mp3';
         audio.autoplay = true;
       }
+      // Прокрутка страницы вверх и вниз
+      window.onload = function() {
+        const btnUp = document.getElementById('scrollUp');
+        const btnDown = document.getElementById('scrollDown');
+        const elem = document.documentElement;
+        scrollUp.hidden = (scrollY < 50);
+        scrollDown.hidden = (scrollY > (elem.scrollHeight - innerHeight - 50));
+        // Прокрутка вверх-вниз
+        btnUp.onclick = () => window.scroll({ top: 0, behavior: "auto" });
+        btnDown.onclick = () => window.scroll({ top: (elem.scrollHeight - innerHeight), behavior: "auto" });
+        // Показать-спрятать кнопки
+        window.addEventListener('scroll', function() {
+          scrollUp.hidden = (scrollY < 50);
+          scrollDown.hidden = (scrollY > ((elem.scrollHeight - innerHeight) - 50));
+          // console.log((elem.scrollHeight - innerHeight) + " " + scrollY)
+        })
+      }
     </script>
-    <script>
+    <!--script>
       // Прокрутка страницы вверх и вниз
       let forAll = 100
       if ($(window).scrollTop() >= forAll) $("#scrollUp").fadeIn('slow');
@@ -198,7 +215,7 @@
       });
       $("#scrollUp").click(function(){$("html,body").animate({scrollTop: 0}, forAll)});
       $("#scrollDown").click(function(){$("html,body").animate({scrollTop: $(document).height()}, forAll)});
-    </script>
+    </script-->
 
     <script src="bootstrap-5.2.3/bootstrap.bundle.min.js"></script>
 
