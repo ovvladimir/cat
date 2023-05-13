@@ -11,54 +11,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap-5.2.3/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap-5.2.3/bootstrap-icons.css">
-    <!-- Дополнительно - для изменения цвета темы -->
+    <!-- Optionally -->
     <link rel="stylesheet" href="css/color-theme.css">
+    <link rel="stylesheet" href="css/main.css">
     <script src="js/color-theme.js"></script>
+    <script src="js/main.js"></script>
     <!-- script src="js/jquery-3.6.4.min.js"></script -->
-    <style>
-      a {text-decoration: none;}
-      h1 {text-shadow: 1px 1px white, 2px 2px white, -1px -1px white, -2px -2px white, -1px 1px white, 1px -1px white, -2px 2px white, 2px -2px white, -3px -3px 4px rgba(0,0,0,.3), -3px 3px 4px rgba(0,0,0,.3), 3px 3px 4px rgba(0,0,0,.3), 3px -3px 4px rgba(0,0,0,.3);}
-      h1 {font-size: 5.9vmin;}
-      h2 {font-size: 4.0vmin;}
-      i {font-size: 3.0vmin;}
-      p {font-size: 4.0vmin;}
-      .text p {text-align: justify; margin-right: 5%;}
-      #meow p span {
-        display: flex;
-        display: inline-block;
-        font-size: 5vw;
-      }
-      body:hover span { 
-        animation: bounce .6s;
-      }
-      @keyframes bounce {
-          0%, 100% { 
-          transform: translate(0); 
-        }
-          25% { 
-          transform: rotateX(20deg) translateY(2px) rotate(-3deg); 
-        }
-          50% { 
-          transform: translateY(-20px) rotate(3deg) scale(1.1);  
-        }
-      }
-      #meow p span:nth-child(4n) { 
-          color: hsl(50, 75%, 55%); 
-          text-shadow: 1px 1px hsl(50, 75%, 45%), 2px 2px hsl(50, 45%, 45%), 3px 3px hsl(50, 45%, 45%), 4px 4px hsl(50, 75%, 45%); 
-      }
-      #meow p span:nth-child(4n-1) { 
-          color: hsl(135, 35%, 55%); 
-          text-shadow: 1px 1px hsl(135, 35%, 45%), 2px 2px hsl(135, 35%, 45%), 3px 3px hsl(135, 35%, 45%), 4px 4px hsl(135, 35%, 45%); 
-      }
-      #meow p span:nth-child(4n-2) { 
-          color: hsl(155, 35%, 60%); 
-          text-shadow: 1px 1px hsl(155, 25%, 50%), 2px 2px hsl(155, 25%, 50%), 3px 3px hsl(155, 25%, 50%), 4px 4px hsl(140, 25%, 50%); 
-      }
-      #meow p span:nth-child(4n-3) { 
-          color: hsl(30, 65%, 60%); 
-          text-shadow: 1px 1px hsl(30, 45%, 50%), 2px 2px hsl(30, 45%, 50%), 3px 3px hsl(30, 45%, 50%), 4px 4px hsl(30, 45%, 50%); 
-      }
-    </style>
   </head>
 
   <body>
@@ -153,7 +111,7 @@
       <div class="container-fluid bg-danger">
         <div class="d-flex justify-content-between p-4 text-light">
           <i>&copy; 2016 Company, «CAT». All rights reserved.</i>
-          <ul class="list-unstyled d-flex gap-3">
+          <ul class="social list-unstyled d-flex gap-3">
             <li><a class="link-light" href="https://github.com/ovvladimir" target="_blank"><i class="bi bi-github"></i></a></li>
             <li><a class="link-light" href="#"><i class="bi bi-twitter"></i></a></li>
             <li><a class="link-light" href="#"><i class="bi bi-instagram"></i></a></li>
@@ -162,61 +120,9 @@
         </div>
       </div>
     </footer>
-    <!--div class="fixed-bottom text-primary">
+    <!-- div class="fixed-bottom text-primary">
       <i id="up" class="bi bi-arrow-up-square fs-1 me-2 position-fixed bottom-0 end-0" role="button" style="opacity: 0;"></i>
-    </div>
-
-    <script type="text/javascript">
-      // Кнопка прокрутки страницы вверх
-      window.onload = function() {
-        let topBtn = document.getElementById('up');
-        topBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
-        window.onscroll = () => window.scrollY > 50 ? topBtn.style.opacity = 0.75 : topBtn.style.opacity = 0
-      }
-    </script-->
-    <script type="text/javascript">
-      function soundClick() {
-        /*h6:hover span {*/
-        var audio = new Audio();
-        audio.src = 'img/cat.mp3';
-        audio.autoplay = true;
-      }
-      // Прокрутка страницы вверх и вниз
-      window.onload = function() {
-        const btnUp = document.getElementById('scrollUp');
-        const btnDown = document.getElementById('scrollDown');
-        const elem = document.documentElement;
-        const indent = 50
-        scrollUp.hidden = (scrollY < indent);
-        scrollDown.hidden = (scrollY > (elem.scrollHeight - innerHeight - indent));
-        // Прокрутка вверх-вниз
-        btnUp.onclick = () => window.scroll({ top: 0, behavior: "auto" });
-        btnDown.onclick = () => window.scroll({ top: (elem.scrollHeight - innerHeight), behavior: "auto" });
-        // Показать-спрятать кнопки
-        window.addEventListener('scroll', function() {
-          scrollUp.hidden = (scrollY < indent);
-          scrollDown.hidden = (scrollY > (elem.scrollHeight - innerHeight - indent));
-          // console.log((elem.scrollHeight - innerHeight) + " " + scrollY)
-        })
-      }
-    </script>
-    <!--script>
-      // Прокрутка страницы вверх и вниз
-      let forAll = 100
-      if ($(window).scrollTop() >= forAll) $("#scrollUp").fadeIn('slow');
-      $(window).scroll(function() {
-          if ($(window).scrollTop() <= forAll) $("#scrollUp").fadeOut('slow');
-          else $("#scrollUp").fadeIn('slow');
-      });
-    
-      if ($(window).scrollTop() + $(window).height() <= $(document).height() - forAll) $("#scrollDown").fadeIn('slow');
-      $(window).scroll(function() {
-          if ($(window).scrollTop() + $(window).height() >= $(document).height() - forAll) $("#scrollDown").fadeOut('slow');
-          else $("#scrollDown").fadeIn('slow');
-      });
-      $("#scrollUp").click(function(){$("html,body").animate({scrollTop: 0}, forAll)});
-      $("#scrollDown").click(function(){$("html,body").animate({scrollTop: $(document).height()}, forAll)});
-    </script-->
+    </div -->
 
     <script src="bootstrap-5.2.3/bootstrap.bundle.min.js"></script>
 
