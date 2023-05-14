@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="VO">
+    <title>Личный сайт Кота</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="icon/site.webmanifest">
+    <link rel="stylesheet" href="bootstrap-5.2.3/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <header class="bg-info">
+        <div class="container text-center py-4">
+            <h2>
+                <a class="text-decoration-none" href="http://kireineko.ru/year-2016" target="_blank">Моя семья</a>
+                <span class="text-light">/</span>
+                <a class="text-decoration-none" href="riddle.html" class="link">Загадки</a>
+                <span class="text-light">/</span>
+                <a class="text-decoration-none" href="guessing.html" class="link">Угадай число</a>
+                <span class="text-light">/</span>
+                <a class="text-decoration-none" href="index.html" class="link">Главная</a>
+            </h2>
+        </div>
+    </header>
+
+    <div class="main container-fluid p-5">
+
+        <div class="text-secondary text-center">
+            <h1 style="text-shadow: 1px 1px white, 2px 2px white, -1px -1px white, -2px -2px white, -1px 1px white, 1px -1px white, -2px 2px white, 2px -2px white, -3px -3px 4px rgba(0,0,0,.3), -3px 3px 4px rgba(0,0,0,.3), 3px 3px 4px rgba(0,0,0,.3), 3px -3px 4px rgba(0,0,0,.3); ">
+                Личный сайт Кота
+            </h1>
+        </div>
+
+        <div class="row">
+            <div class="col-8 text-secondary">
+                <h2 class="text-primary my-4">Игра "Угадай число"</h2>
+                <div class="text-danger" id="result"></div>
+                <p style="text-align: justify">Играет 2 игрока. У вас будет неограниченное количество попыток.</p>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-lg btn-outline-primary my-2" type="submit" onclick="play()">
+                        Начать игру
+                    </button>
+                </div>
+            </div>
+            <div class="col-4 mt-4">
+                <img class="img-fluid mx-auto d-block rounded-circle" src="img/Домовой2.jpg" />
+            </div>
+        </div>
+    </div>
+    <div class="p-5">&ensp;</div><div class="p-5">&ensp;</div>
+ 
+    <footer>
+        <div class="container-fluid bg-danger text-light text-center py-4">
+            <i>&copy; 2016 Company, «CAT». All rights reserved.</i>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="js/script_u.js"></script>
+    <script src="bootstrap-5.2.3/bootstrap.bundle.min.js"></script>
+</body>
+</html>

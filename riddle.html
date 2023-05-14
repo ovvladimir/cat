@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="VO">
+    <title>Личный сайт Кота</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="icon/site.webmanifest">
+    <link rel="stylesheet" href="bootstrap-5.2.3/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <header class="bg-info">
+        <div class="container text-center py-4">
+            <h2>
+                <a class="text-decoration-none" href="http://kireineko.ru/year-2016" target="_blank">Моя семья</a>
+                <span class="text-light">/</span>
+                <a class="text-decoration-none" href="riddle.html" class="link">Загадки</a>
+                <span class="text-light">/</span>
+                <a class="text-decoration-none" href="guessing.html" class="link">Угадай число</a>
+                <span class="text-light">/</span>
+                <a class="text-decoration-none" href="index.html" class="link">Главная</a>
+            </h2>
+        </div>
+    </header>
+
+    <div class="main container-fluid p-5">
+
+        <div class="text-secondary text-center">
+            <h1>Личный сайт Кота</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-8 text-secondary">
+                <h2 class="text-primary mb-4">Игра в загадки</h2>
+                <label class="form-label" for="userAnswer1">Сто одежек и все без застежек</label>
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-lg" placeholder="Введите ответ" id="userAnswer1">
+                </div>
+                <label class="form-label" for="userAnswer2">Висит груша, нельзя скушать</label>
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-lg" placeholder="Введите ответ" id="userAnswer2">
+                </div>
+                <label class="form-label" for="userAnswer3">Не лает, не кусает, а в дом не пускает</label>
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-lg" placeholder="Введите ответ" id="userAnswer3">
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-lg btn-outline-primary my-2" type="submit" onclick="playPuzzle()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Показать результат
+                    </button>
+                </div>
+                <!-- Start Modal -->
+                <div class="modal fade" id="staticBackdrop" role="dialog" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body text-center p-4" id="result"></div>
+                            <div class="modal-footer p-1">
+                                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Modal-->
+            </div>
+            <div class="col-4">
+                <img class="img-fluid mx-auto d-block" src="img/Домовой.jpg" />
+            </div>
+        </div>
+
+    </div>
+    <div class="p-5">&ensp;</div>
+
+    <footer>
+        <div class="container-fluid bg-danger text-light text-center py-4">
+            <i>&copy; 2016 Company, «CAT». All rights reserved.</i>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="js/script_z.js"></script>
+    <script src="bootstrap-5.2.3/bootstrap.bundle.min.js"></script>
+</body>
+</html>
