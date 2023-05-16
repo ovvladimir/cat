@@ -1,28 +1,28 @@
 // Звук
 function soundClick() {
-/*h6:hover span {*/
-var audio = new Audio();
-audio.src = 'img/cat.mp3';
-audio.autoplay = true;
+    /*h6:hover span {*/
+    var audio = new Audio();
+    audio.src = 'img/cat.mp3';
+    audio.autoplay = true;
 }
 
 // Прокрутка страницы вверх и вниз
 window.onload = function() {
-const btnUp = document.getElementById('scrollUp');
-const btnDown = document.getElementById('scrollDown');
-const elem = document.documentElement;
-const indent = 50
-scrollUp.hidden = (scrollY < indent);
-scrollDown.hidden = (scrollY > (elem.scrollHeight - innerHeight - indent));
-// Прокрутка вверх-вниз
-btnUp.onclick = () => window.scroll({ top: 0, behavior: "auto" });
-btnDown.onclick = () => window.scroll({ top: (elem.scrollHeight - innerHeight), behavior: "auto" });
-// Показать-спрятать кнопки
-window.addEventListener('scroll', function() {
+    const btnUp = document.getElementById('scrollUp');
+    const btnDown = document.getElementById('scrollDown');
+    const elem = document.documentElement;
+    const indent = 50;
     scrollUp.hidden = (scrollY < indent);
     scrollDown.hidden = (scrollY > (elem.scrollHeight - innerHeight - indent));
-    // console.log((elem.scrollHeight - innerHeight) + " " + scrollY)
-})
+    // Прокрутка вверх-вниз
+    btnUp.onclick = () => window.scroll({ top: 0, behavior: "auto" });
+    btnDown.onclick = () => window.scroll({ top: (elem.scrollHeight - innerHeight), behavior: "auto" });
+    // Показать-спрятать кнопки
+    window.addEventListener('scroll', function() {
+        scrollUp.hidden = (scrollY < indent);
+        scrollDown.hidden = (scrollY > (elem.scrollHeight - innerHeight - indent));
+        // console.log((elem.scrollHeight - innerHeight) + " " + scrollY)
+    })
 }
 
 /*
