@@ -1,6 +1,9 @@
 (() => {
   const currentTheme = localStorage.getItem("theme")
-  const getPreferredTheme = () => { return currentTheme }
+  const getLocalTheme = () => {
+    if (currentTheme) { return currentTheme }
+    return document.querySelector(".active").getAttribute('data-bs-theme-value')
+  }
   const setTheme = function (theme) {
     const formControl = document.querySelector(".main")
     if (theme === "light") {formControl.style.backgroundColor = "#f8f9fa"; formControl.style.color = "#212529"}
@@ -22,7 +25,7 @@
     document.getElementById("icon-active").className = "bi " + svgOfActiveBtn + " mb-3 fs-2"
   }
 
-  showActiveTheme(getPreferredTheme())
+  showActiveTheme(getLocalTheme())
   document.querySelectorAll('[data-bs-theme-value]').forEach(toggle => {
     toggle.addEventListener('click', () => {
       const theme = toggle.getAttribute('data-bs-theme-value')
