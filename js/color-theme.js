@@ -6,8 +6,8 @@
   }
   const setTheme = function (theme) {
     const formControl = document.querySelector(".main")
-    if (theme === "light") {formControl.style.backgroundColor = "#f8f9fa"; formControl.style.color = "#212529"}
-    else {formControl.style.backgroundColor = "#212529"; formControl.style.color = "#f8f9fa"}
+    if (theme === "dark") {formControl.style.backgroundColor = "#212529"; formControl.style.color = "#f8f9fa"}
+    else {formControl.style.backgroundColor = "#f8f9fa"; formControl.style.color = "#212529"}
   }
   setTheme(currentTheme)
   // console.log(currentTheme)
