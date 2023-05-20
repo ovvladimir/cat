@@ -22,7 +22,7 @@
 
     btnToActive.classList.add('active')
     btnToActive.setAttribute('aria-pressed', 'true')
-    document.getElementById("icon-active").className = "bi " + svgOfActiveBtn + " mb-3 fs-2"
+    document.getElementById("icon-active").className = "bi " + svgOfActiveBtn + " fs-2"
   }
 
   showActiveTheme(getLocalTheme())
