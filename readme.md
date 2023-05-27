@@ -1,4 +1,4 @@
-<h1><img src="https://readme-typing-svg.herokuapp.com?pause=1000&color=2526F7&width=435&lines=Личный+сайт+кота+Шока" alt="Typing SVG" /></h1>
+<h1><img src="img/text.svg" alt="Typing SVG" /></h1>
 
 У каждого крутого Кота должен быть свой сайт - https://ovvladimir.github.io/cat/
 
