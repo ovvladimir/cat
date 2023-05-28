@@ -6,7 +6,7 @@
         <animate id='x' attributeName='d' begin='0s;x.end' dur='6s' fill='remove'
             values='m0,25 h0 ; m0,25 h350 ; m0,25 h350 ; m0,25 h0' />
     </path>
-    <text font-family='"monospace", monospace' fill='#2526F7' font-size='28' dominant-baseline='auto' x='0%' text-anchor='start'>
+    <text font-family='"Fira Code", monospace' fill='#2526F7' font-size='28' dominant-baseline='auto' x='0%' text-anchor='start'>
         <textPath href='#path'>
             Личный сайт кота Шока
         </textPath>
