@@ -1,4 +1,7 @@
-<svg xmlns='http://www.w3.org/2000/svg' style='background-color: #0000;' x='0' y='0'>
+<svg xmlns='http://www.w3.org/2000/svg'
+    viewBox='0 0 350 28'
+    style='background-color: #0000;'
+    width='350' height='28'>
     <path id='path'>
         <animate id='x' attributeName='d' begin='0s;x.end' dur='6s' fill='remove'
             values='m0,25 h0 ; m0,25 h350 ; m0,25 h350 ; m0,25 h0' />
