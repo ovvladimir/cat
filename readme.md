@@ -3,4 +3,4 @@
 У каждого крутого Кота должен быть свой сайт - https://ovvladimir.github.io/cat/
 
 Skills: VUE 3 / Bootstrap 5 / JS / HTML / CSS
-<h1 align="center"><img src="img/cat.svg" /></h1>
+<p align="center"><img src="img/cat.svg" /></p>
