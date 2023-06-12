@@ -6,6 +6,7 @@ function play() {
     let max = 100;
     let arr = [];
     let name = prompt("Как Вас зовут?");
+    if (name == null) {name = "NoName"};
     // console.log(answer) // подсказка в консоле или F12
 
     for (let user=1; user<=2; user++) {
