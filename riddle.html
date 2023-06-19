@@ -11,8 +11,13 @@
     <link rel="manifest" href="icon/site.webmanifest">
     <link rel="stylesheet" href="bootstrap-5.2.3/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="py/pyscript.net_latest_pyscript.css">
+    <script defer src="py/pyscript.net_latest_pyscript.js"></script>
 </head>
 <body>
+    <py-config type="toml">
+        packages = ["numpy"]
+    </py-config>
 
     <header class="bg-info">
         <div class="container text-center py-4">
@@ -35,7 +40,26 @@
         </div>
 
         <div class="row">
-            <div class="col-8 text-secondary">
+            <div class="col-md-8 text-secondary">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="text-primary my-4">Шахматы</h2>
+                        <div id="chess" class=""></div>
+                        <div id="out"></div>
+                        <div class="input-group my-1 inp">
+                            <input id="txt" type="text" class="form-control" placeholder="Ваш ход (пример, e2e4)">
+                            <button py-click="play()" class="btn btn-outline-primary" type="button">ВВОД</button>
+                        </div>
+                        <button py-click="start()" class="btn btn-outline-primary" type="button" id="btn">НОВАЯ ИГРА</button>
+                        <py-script src="py/chessW.py"></py-script>
+                    </div>
+                    <div class="col-md-2">
+                        <h2 class="text-primary my-4 text-truncate">Крестики нолики</h2>
+                        
+                    </div>
+                </div>
+
                 <h2 class="text-primary my-4">Игра в загадки</h2>
                 <label class="form-label" for="userAnswer1">Сто одежек и все без застежек</label>
                 <div class="input-group">
@@ -67,7 +91,7 @@
                 </div>
                 <!-- End Modal-->
             </div>
-            <div class="col-4 mt-4">
+            <div class="col-md-4 mt-4">
                 <img class="img-fluid mx-auto d-block rounded-pill" src="img/1.jpg" />
             </div>
         </div>
