@@ -34,7 +34,7 @@ chessman = np.array([
 
 def play():
     out.innerHTML = ''
-    move = Element("txt").value
+    move = Element("txt").value.lower()
     try:
         if (dl[move[0]] == dl[move[2]] and dn[move[1]] == dn[move[3]]) or len(move) != 4 or \
            (9824 > ord(chessman[1:-1, 1:-1][dn[move[1]], dl[move[0]]]) > 9817 and player[0] == "белые") or \
