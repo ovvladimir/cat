@@ -162,7 +162,6 @@ class Games {
 				this.sells[this.arr[i][2]].classList.add("victory");
 				this.result.innerText = "Выиграли Вы";
 				this.game.removeEventListener("click", this.initBound);
-				this.step = true;
 				break;
 			}
 		}
