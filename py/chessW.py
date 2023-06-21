@@ -44,10 +44,10 @@ def play():
         chessman[1:-1, 1:-1][dn[move[1]], dl[move[0]]] = sp
         player.reverse()
         display(f'Ходят {player[0]}', target="out")
-        out.style.color = 'green'
+        out.style.color = '#198754'
     except (IndexError, TypeError, BaseException):
         display(f'Ошибка. Ходят {player[0]}.', target="out")
-        out.style.color = 'red'
+        out.style.color = '#ff4136'
     parent.innerHTML = ''
     txt.value = ''
     txt.focus()
@@ -85,11 +85,11 @@ def start():
     txt.value = ''
     html()
     display(f'Ходят {player[0]}', target="out")
-    out.style.color = 'green'
+    out.style.color = '#198754'
     txt.focus()
 
 
 html()
 display(f'Ходят {player[0]}', target="out")
-out.style.color = 'green'
+out.style.color = '#198754'
 txt.focus()

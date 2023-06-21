@@ -43,7 +43,7 @@
             <div class="col-8 text-secondary">
 
                 <div class="row">
-                    <div class="col-xxl-6">
+                    <div class="col-xl-6">
                         <h2 class="text-primary my-4">Шахматы</h2>
                         <div id="chess" class=""></div>
                         <div id="out"></div>
@@ -51,12 +51,14 @@
                             <input id="txt" type="text" class="form-control" placeholder="Ваш ход (пример, e2e4)">
                             <button py-click="play()" class="btn btn-outline-primary" type="button">ВВОД</button>
                         </div>
-                        <button py-click="start()" class="btn btn-outline-primary" type="button" id="btn">НОВАЯ ИГРА</button>
+                        <button py-click="start()" class="btn btn-outline-primary" id="btn1" type="button">НОВАЯ ИГРА</button>
                         <py-script src="py/chessW.py"></py-script>
                     </div>
-                    <div class="col-xxl-6">
+                    <div class="col-xl-6 d-block">
                         <h2 class="text-primary my-4 text-truncate">Крестики нолики</h2>
-                        
+                        <div class="ttt"></div>
+                        <div class="result text-success fs-2 d-flex align-items-center" style="height: 72px"></div>
+                        <button class="btn btn-outline-primary" id="btn2" type="button" >НОВАЯ ИГРА</button>  
                     </div>
                 </div>
 
@@ -115,6 +117,7 @@
             setTheme(getTheme)
         }
     </script>
+    <script type="text/javascript" src="js/ttt.js"></script>
     <script type="text/javascript" src="js/script_riddle.js"></script>
     <script src="bootstrap-5.2.3/bootstrap.bundle.min.js"></script>
 </body>

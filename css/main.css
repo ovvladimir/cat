@@ -58,21 +58,38 @@ body:hover span {
       text-shadow: 0px 0px 1px #131313, 0px 0px 1px #070707, 0px 0px 1px black, 0px 0px 1px black;
   }
   #chess {
-    width: 402px;
+    width: 362px;
     display: flex;
     flex-wrap: wrap;
     border: 1px solid #0074d9;
   }
   .labelChess {
     display: flex;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border: 1px solid #0074d9;
     text-align: center;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
-  .inp {width: 402px;}
-  #btn {width: 404px;}
-  #out {width: 402px;}
+  .ttt {
+    width: 360px;
+    height: 360px;
+    display: flex;
+    flex-wrap: wrap;
+    outline: 2px solid #0074d9;
+  }
+  .cell {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #0074d9;
+    cursor: pointer;
+  }
+  .victory {
+    background: rgba(0, 255, 0, 0.5);
+  }
+  #btn1 {width: 360px;}
+  #btn2 {width: 360px;}
+  #out {width: 360px;}
+  .inp {width: 360px;}
