@@ -196,7 +196,7 @@ class Games {
 class Line {
 	constructor(xy) {
 		this.line = `<svg height="360" width="360" style="background-color: transparent;">
-		<line stroke-opacity="0.75" stroke="#198754" stroke-width="4" x1="${xy[0]}" y1="${xy[1]}" x2="${xy[2]}" y2="${xy[3]}" />
+		<line stroke="#198754BF" stroke-width="4" x1="${xy[0]}" y1="${xy[1]}" x2="${xy[2]}" y2="${xy[3]}" />
 	 	</svg> `;
 	}
 	stepLine(target) {
