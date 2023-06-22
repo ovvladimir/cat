@@ -1,5 +1,10 @@
 class Games {
     constructor() {
+		const x = 0; const y = 0; const w = 360; const h = 360; const d = 10;
+		this.cord = [
+			[x+d, h/6, w-d, h/6], [x+d, h/2, w-d, h/2], [x+d, h/1.2, w-d, h/1.2], [w/6, y+d, w/6, h-d],
+			[w/2, y+d, w/2, h-d], [w/1.2, y+d, w/1.2, h-d], [x+d, y+d, w-d, h-d], [w-d, y+d, x+d, h-d]
+		];
         this.arr = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6],];
 		this.game = document.querySelector('.ttt');
 		for (let i = 0; i <= this.arr.length; i++) {
@@ -12,6 +17,10 @@ class Games {
         this.btnGame = document.querySelector("#btn2");
         this.step = false;
         this.initBound = this.init.bind(this);
+
+		this.gameAtop = document.createElement('span');
+		this.gameAtop.style.position = 'absolute';
+		this.game.appendChild(this.gameAtop);
     }
 
     init(e) {
@@ -127,6 +136,7 @@ class Games {
     newGame() {
         this.step = false;
         this.result.innerText = "";
+		this.gameAtop.innerHTML = "";
         this.sells.forEach((item) => {
             item.innerHTML = "";
             item.classList.remove("x", "o", "victory");
@@ -144,9 +154,7 @@ class Games {
 				this.sells[this.arr[i][2]].classList.contains("o")
 			) {
 				gameOver = true;
-				this.sells[this.arr[i][0]].classList.add("victory");
-				this.sells[this.arr[i][1]].classList.add("victory");
-				this.sells[this.arr[i][2]].classList.add("victory");
+				new Line(this.cord[i]).stepLine(this.gameAtop);
 				this.result.innerText = "Выиграл Кот";
 				this.game.removeEventListener("click", this.initBound);
 				this.step = true;
@@ -157,9 +165,7 @@ class Games {
 				this.sells[this.arr[i][2]].classList.contains("x")
 			) {
 				gameOver = true;
-				this.sells[this.arr[i][0]].classList.add("victory");
-				this.sells[this.arr[i][1]].classList.add("victory");
-				this.sells[this.arr[i][2]].classList.add("victory");
+				new Line(this.cord[i]).stepLine(this.gameAtop);
 				this.result.innerText = "Выиграли Вы";
 				this.game.removeEventListener("click", this.initBound);
 				break;
@@ -184,6 +190,17 @@ class Games {
 			}
 		}
 		return false;
+	}
+}
+
+class Line {
+	constructor(xy) {
+		this.line = `<svg height="360" width="360" style="background-color: transparent;">
+		<line stroke-opacity="0.75" stroke="#198754" stroke-width="4" x1="${xy[0]}" y1="${xy[1]}" x2="${xy[2]}" y2="${xy[3]}" />
+	 	</svg> `;
+	}
+	stepLine(target) {
+		target.innerHTML = this.line;
 	}
 }
 

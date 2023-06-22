@@ -86,9 +86,6 @@ body:hover span {
     border: 2px solid #0074d9;
     cursor: pointer;
   }
-  .victory {
-    background: rgba(25, 135, 84, 0.5);
-  }
   #btn1 {width: 360px;}
   #btn2 {width: 360px;}
   #out {width: 360px;}
