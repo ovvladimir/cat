@@ -31,7 +31,7 @@ class Games {
 				if (!this.win()) {
 					const emptyCells = this.getEmptyCells();
 					if (emptyCells.length > 0) {
-						const targetCell = this.sells[emptyCells[this.hardAiMove(emptyCells)]];
+						const targetCell = this.sells[emptyCells[this.AiMove(emptyCells)]];
 						setTimeout(() => {
 							new Circle().stepZero(targetCell);
 							this.step = !this.step;
@@ -43,7 +43,7 @@ class Games {
 		}
 	}
 
-    hardAiMove(emptyCells) {
+    AiMove(emptyCells) {
         for (const index of emptyCells) {
             const boardCopy = [...this.getBoardState()];
             boardCopy[index] = "o";
