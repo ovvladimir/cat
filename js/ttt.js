@@ -139,7 +139,7 @@ class Games {
 		this.gameAtop.innerHTML = "";
         this.sells.forEach((item) => {
             item.innerHTML = "";
-            item.classList.remove("x", "o", "victory");
+            item.classList.remove("x", "o");
         });
         this.game.addEventListener("click", this.init.bind(this));
         this.game.addEventListener("click", this.initBound);
