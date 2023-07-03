@@ -11,10 +11,13 @@
     <link rel="manifest" href="icon/site.webmanifest">
     <link rel="stylesheet" href="bootstrap-5.2.3/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="py/brython.min.js"></script>
-
+    <link rel="stylesheet" href="py/pyscript.css">
+    <script defer src="py/pyscript.js"></script>
 </head>
-<body onload="brython()">
+<body>
+    <py-config>
+        packages = ["py/numpy-1.24.2-cp311-cp311-emscripten_3_1_32_wasm32.whl"]
+    </py-config>
 
     <header class="bg-info">
         <div class="container text-center py-4">
@@ -46,9 +49,10 @@
                         <div id="out"></div>
                         <div class="input-group my-1 inp">
                             <input id="txt" type="text" class="form-control" placeholder="Ваш ход (пример, e2e4)">
-                            <button class="btn btn-outline-primary" type="button" id="play">ВВОД</button>
+                            <button py-click="play()" class="btn btn-outline-primary" type="button">ВВОД</button>
                         </div>
-                        <button class="btn btn-outline-primary" id="start" type="button">НОВАЯ ИГРА</button>
+                        <button py-click="start()" class="btn btn-outline-primary" id="start" type="button">НОВАЯ ИГРА</button>
+                        <py-script src="py/chess_pyscript.py"></py-script>
                     </div>
                     <div class="col-xl-6 d-block">
                         <h2 class="text-primary my-4 text-truncate">Крестики-Нолики</h2>
@@ -115,7 +119,6 @@
             setTheme(getTheme)
         }
     </script>
-    <script type="text/python" src="py/chess_brython.py"></script>
     <script type="text/javascript" src="js/ttt.js"></script>
     <script type="text/javascript" src="js/riddle.js"></script>
     <script src="bootstrap-5.2.3/bootstrap.bundle.min.js"></script>

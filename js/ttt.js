@@ -14,7 +14,7 @@ class Games {
 		};
 		this.sells = document.querySelectorAll(".cell");
         this.result = document.querySelector(".result");
-        this.btnGame = document.querySelector("#btn2");
+        this.btnGame = document.querySelector("#start2");
         this.step = false;
         this.initBound = this.init.bind(this);
 
