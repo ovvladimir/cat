@@ -2,5 +2,5 @@
 
 У каждого крутого Кота должен быть свой сайт - https://ovvladimir.github.io/cat/
 
-$${\color{white}Skills: \color{green}VUE 3 / \color{blue}Bootstrap 5 / \color{lightblue}JS / \color{orange}HTML / \color{lightgreen}CSS / \color{#ff4136;}PyScript / \color{red}Brython}$$
+$${\color{white}Skills: \space \color{green}VUE \space 3 \color{white}\space / \space \color{blue}Bootstrap \space 5 \color{white}\space / \space \color{lightblue}JS \color{white}\space / \space \color{orange}HTML \color{white}\space / \space \color{lightgreen}CSS \color{white}\space / \space \color{"#ff4136"}PyScript \color{white}\space / \space \color{red}Brython}$$
 <h1 align="center"><img src="img/cat.svg" alt="" /></h1>
