@@ -199,6 +199,7 @@ class Game:
 
     def start_timer(self, ev=None):
         self.start()
+        self.stop_timer()
         self.tick_timer = timer.set_interval(self.update, 300)
 
 
