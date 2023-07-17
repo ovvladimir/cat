@@ -29,6 +29,7 @@ element2 = document["tetris2"]
 element3 = document["score"]
 element4 = document["over"]
 element5 = document["start3"]
+element6 = document["bottom_click"]
 canvas = element.getContext("2d")
 canvas2 = element2.getContext("2d")
 canvas.strokeStyle = '#0074d9'
@@ -176,14 +177,25 @@ class Game:
 
     def key_push(self, ev):
         key = ev.keyCode
-        if key == 65:
+        if key == 87:
+            self.rotate()
+        elif key == 65:
             self.move_horizontal(-1)
         elif key == 68:
             self.move_horizontal(1)
         elif key == 83:
             self.move_bottom()
-        elif key == 87:
+
+    def bottom_push(self, ev):
+        bt = ev.target.id
+        if bt == 'W':
             self.rotate()
+        elif bt == 'A':
+            self.move_horizontal(-1)
+        elif bt == 'S':
+            self.move_horizontal(1)
+        elif bt == 'D':
+            self.move_bottom()
 
     def start(self):
         self.gameover = False
@@ -193,6 +205,7 @@ class Game:
         self.new_next_block()
         self.new_block()
         document.addEventListener("keydown", self.key_push)
+        element6.addEventListener("click", self.bottom_push)
 
     def stop_timer(self):
         timer.clear_interval(self.tick_timer)
