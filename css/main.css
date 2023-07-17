@@ -59,8 +59,6 @@ body:hover span {
 }
 #chess {
   width: 362px;
-  display: flex;
-  flex-wrap: wrap;
   border: 1px solid #0074d9;
 }
 .labelChess {
@@ -76,17 +74,23 @@ body:hover span {
 .ttt {
   width: 360px;
   height: 360px;
-  display: flex;
-  flex-wrap: wrap;
   outline: 2px solid #0074d9;
 }
 .cell {
   width: 120px;
   height: 120px;
   border: 2px solid #0074d9;
-  cursor: pointer;
+  cursor: cell;
 }
 #start {width: 360px;}
 #start2 {width: 360px;}
+#start3 {width: 360px;}
 #out {width: 360px;}
 .inp {width: 360px;}
+.tetris_label label {
+  width: 40px;
+  height: 40px;
+  font-size: 1.4rem;
+  background-color: #0074d9;
+  border: 2px solid #adb5bd;
+}
