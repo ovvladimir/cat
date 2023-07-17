@@ -115,7 +115,7 @@ class Game:
         if self.intersects():
             self.gameover = True
             timer.clear_interval(self.tick_timer)
-            element4.innerHTML = "Game Over"
+            element4.innerHTML = "Конец игры"
 
     def move_down(self):
         self.block.y += 1
@@ -169,8 +169,8 @@ class Game:
 
         canvas.closePath()
         canvas2.closePath()
-        element3.innerHTML = "score: " + str(self.score)
-        element4.innerHTML = "Game"
+        element3.innerHTML = "очки: " + str(self.score)
+        element4.innerHTML = "Игра"
 
         if not self.gameover:
             self.move_down()
@@ -219,5 +219,5 @@ class Game:
 game = Game(size, rows)
 game.start()
 game.update()
-element4.innerHTML = "New Game"
+element4.innerHTML = "Начать игру"
 element5.bind("click", game.start_timer)
