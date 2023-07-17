@@ -101,7 +101,7 @@ class Game:
                 for m in range(i, 1, -1):
                     for j in range(self.row):
                         self.field[m][j] = self.field[m - 1][j]
-        self.score += lines ** 2
+        self.score += lines
 
     def freeze(self):
         for i in range(4):
