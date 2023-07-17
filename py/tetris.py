@@ -192,9 +192,9 @@ class Game:
             self.rotate()
         elif bt == 'A':
             self.move_horizontal(-1)
-        elif bt == 'S':
-            self.move_horizontal(1)
         elif bt == 'D':
+            self.move_horizontal(1)
+        elif bt == 'S':
             self.move_bottom()
 
     def start(self):
