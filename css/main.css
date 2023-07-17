@@ -87,7 +87,7 @@ body:hover span {
 #start3 {width: 360px;}
 #out {width: 360px;}
 .inp {width: 360px;}
-.tetris_button button {
+#bottom_click button {
   width: 50px;
   height: 50px;
 }
