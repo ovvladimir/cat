@@ -33,7 +33,7 @@ chessman = [
 
 
 def play(e):
-    if e.key == 'Enter':
+    if e.keyCode == 13:
         out.innerHTML = ''
         move = txt.value.lower()
         try:
