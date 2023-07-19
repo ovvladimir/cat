@@ -96,5 +96,5 @@ document["out"] <= f'Ходят {player[0]}'
 out.style.color = '#198754'
 txt.focus()
 
-txt.bind("keydown", play)
+txt.bind("keypress", play)
 btn_start.bind("click", start)
