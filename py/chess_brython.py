@@ -3,9 +3,7 @@ from browser import document
 txt = document['txt']
 out = document['out']
 parent = document['chess']
-# txt = document.querySelector('#txt')
-# out = document.querySelector('#out')
-# parent = document.querySelector('#chess')
+btn_start = document["start"]
 
 COLORS = ('gold', '#ff4136', '#adb5bd')
 player = ["белые", "чёрные"]
@@ -34,26 +32,27 @@ chessman = [
 ]
 
 
-def play(e=None):
-    out.innerHTML = ''
-    move = txt.value.lower()
-    try:
-        if (dl[move[0]] == dl[move[2]] and dn[move[1]] == dn[move[3]]) or len(move) != 4 or \
-                (9824 > ord(chessman[dn[move[1]] + 1][dl[move[0]] + 1]) > 9817 and player[0] == "белые") or \
-                (9818 > ord(chessman[dn[move[1]] + 1][dl[move[0]] + 1]) > 9811 and player[0] == "чёрные"):
-            move = sp
-        chessman[dn[move[3]] + 1][dl[move[2]] + 1] = chessman[dn[move[1]] + 1][dl[move[0]] + 1]
-        chessman[dn[move[1]] + 1][dl[move[0]] + 1] = sp
-        player.reverse()
-        document["out"] <= f'Ходят {player[0]}'
-        out.style.color = '#198754'
-    except (IndexError, TypeError, BaseException):
-        document["out"] <= f'Ошибка. Ходят {player[0]}.'
-        out.style.color = '#ff4136'
-    parent.innerHTML = ''
-    txt.value = ''
-    txt.focus()
-    html()
+def play(e):
+    if e.key == 'Enter':
+        out.innerHTML = ''
+        move = txt.value.lower()
+        try:
+            if (dl[move[0]] == dl[move[2]] and dn[move[1]] == dn[move[3]]) or len(move) != 4 or \
+                    (9824 > ord(chessman[dn[move[1]] + 1][dl[move[0]] + 1]) > 9817 and player[0] == "белые") or \
+                    (9818 > ord(chessman[dn[move[1]] + 1][dl[move[0]] + 1]) > 9811 and player[0] == "чёрные"):
+                move = sp
+            chessman[dn[move[3]] + 1][dl[move[2]] + 1] = chessman[dn[move[1]] + 1][dl[move[0]] + 1]
+            chessman[dn[move[1]] + 1][dl[move[0]] + 1] = sp
+            player.reverse()
+            document["out"] <= f'Ходят {player[0]}'
+            out.style.color = '#198754'
+        except (IndexError, TypeError, BaseException):
+            document["out"] <= f'Ошибка. Ходят {player[0]}.'
+            out.style.color = '#ff4136'
+        parent.innerHTML = ''
+        txt.value = ''
+        txt.focus()
+        html()
 
 
 def html():
@@ -97,5 +96,5 @@ document["out"] <= f'Ходят {player[0]}'
 out.style.color = '#198754'
 txt.focus()
 
-document["play"].bind("click", play)
-document["start"].bind("click", start)
+txt.bind("keydown", play)
+btn_start.bind("click", start)
