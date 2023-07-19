@@ -33,7 +33,7 @@ chessman = [
 
 
 def play(e):
-    if e.keyCode == 13:
+    if e.key == 'Enter':
         out.innerHTML = ''
         move = txt.value.lower()
         try:
@@ -96,5 +96,5 @@ document["out"] <= f'Ходят {player[0]}'
 out.style.color = '#198754'
 txt.focus()
 
-txt.bind("keypress", play)
+txt.bind("keydown", play)
 btn_start.bind("click", start)
