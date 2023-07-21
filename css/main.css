@@ -59,13 +59,14 @@ body:hover span {
 }
 #chess {
   width: 362px;
-  border: 1px solid #0074d9;
+  height: 362px;
+  border: 1px solid rgb(0, 123, 255);
 }
 .labelChess {
   display: flex;
   width: 36px;
   height: 36px;
-  border: 1px solid #0074d9;
+  border: 1px solid rgb(0, 123, 255);
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -74,20 +75,23 @@ body:hover span {
 .ttt {
   width: 360px;
   height: 360px;
-  outline: 2px solid #0074d9;
+  outline: 2px solid rgb(0, 123, 255);
 }
 .cell {
   width: 120px;
   height: 120px;
-  border: 2px solid #0074d9;
+  border: 2px solid rgb(0, 123, 255);
   cursor: cell;
 }
-#start {width: 360px;}
-#start2 {width: 360px;}
-#start3 {width: 360px;}
-#out {width: 360px;}
-.inp {width: 360px;}
+#snake_board {
+  border: 2px solid rgb(0, 123, 255);
+}
+.width {width: 360px;}
 #bottom_click button {
+  width: 50px;
+  height: 50px;
+}
+#buttons_snake button {
   width: 50px;
   height: 50px;
 }

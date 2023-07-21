@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./icon/favicon-16x16.png">
     <link rel="manifest" href="./icon/site.webmanifest">
     <link rel="stylesheet" href="./bootstrap-5.2.3/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.2.3/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/main.css">
     <script src="./py/brython.min.js"></script>
     <script src="./py/brython_stdlib.js"></script>
@@ -21,7 +22,7 @@
             <h2>
                 <a class="text-decoration-none" href="http://kireineko.ru/year-2016" target="_blank">Моя семья</a>
                 <span class="text-light">/</span>
-                <a class="text-decoration-none" href="games.html" class="link">Три игры</a>
+                <a class="text-decoration-none" href="games.html" class="link">Пять игр</a>
                 <span class="text-light">/</span>
                 <a class="text-decoration-none" href="guessing.html" class="link">Угадай число</a>
                 <span class="text-light">/</span>
@@ -36,25 +37,25 @@
             <h1>Личный сайт Кота</h1>
         </div>
 
-        <div class="row row-cols-xl-1 row-cols-xl-2 row-cols-xl-3 py-4 g-4">
+        <div class="row row-cols-xl-1 row-cols-xl-2 row-cols-xl-3 pt-4 g-4">
             <div class="col">
                 <h2 class="text-primary">Шахматы</h2>
                 <div id="chess" class="d-flex flex-wrap"></div>
-                <div id="out"></div>
-                <div class="input-group my-1 inp">
+                <div id="out" class="width"></div>
+                <div class="input-group my-1 width">
                     <input id="txt" type="text" class="form-control" placeholder="Ваш ход (пример, e2e4 -> Enter)">
                 </div>
-                <button class="btn btn-outline-primary" id="start" type="button">НОВАЯ ИГРА</button>
+                <button class="btn btn-outline-primary width" id="start" type="button">НОВАЯ ИГРА</button>
             </div>
             <div class="col">
                 <h2 class="text-primary text-truncate">Крестики-Нолики</h2>
                 <div class="ttt d-flex flex-wrap"></div>
                 <div class="result text-success fs-2 d-flex align-items-center" style="height: 71px"></div>
-                <button class="btn btn-outline-primary" id="start2" type="button" >НОВАЯ ИГРА</button>  
+                <button class="btn btn-outline-primary width" id="start2" type="button" >НОВАЯ ИГРА</button>  
             </div>
             <div class="col">
                 <h2 class="text-primary">Тетрис</h2>
-                <div class="row" style="width: 360px;">
+                <div class="row width">
                     <div class="col-7">
                         <canvas width="202" height="402" id="tetris"></canvas>
                     </div>
@@ -70,13 +71,26 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-outline-primary mt-4" id="start3" type="button" >НОВАЯ ИГРА</button> 
+                <button class="btn btn-outline-primary mt-4 width" id="start3" type="button" >НОВАЯ ИГРА</button> 
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-xl-8 text-secondary">
-                <h2 class="text-primary my-4">Игра в загадки</h2>
+        <div class="row pt-4 g-4">
+            <div class="col-xl-4">
+                <h2 class="text-primary">Змейка</h2>
+                <canvas id="snake_board" width="360" height="360"></canvas>
+                <div id="snake_score" class="text-center text-success fs-2 width"></div>
+                <div class="text-center my-3 width" id="buttons_snake">
+                    <button class="btn btn-primary" id="kW">W</button><br>
+                    <button class="btn btn-primary me-3" id="kA">A</button>
+                    <button class="btn btn-primary ms-3" id="kD">D</button><br>
+                    <button class="btn btn-primary" id="kS">S</button>
+                </div>
+                <button class="btn btn-outline-primary width" id="start4" type="button" >НОВАЯ ИГРА</button> 
+            </div>
+
+            <div class="col-xl-8">
+                <h2 class="text-primary">Загадки</h2>
                 <label class="form-label" for="userAnswer1">Сто одежек и все без застежек</label>
                 <div class="input-group">
                     <input type="text" class="form-control form-control-lg" placeholder="Введите ответ" id="userAnswer1">
@@ -89,14 +103,13 @@
                 <div class="input-group">
                     <input type="text" class="form-control form-control-lg" placeholder="Введите ответ" id="userAnswer3">
                 </div>
-                <div class="d-grid gap-2">
-                    <button class="btn btn-lg btn-outline-primary my-2" type="submit" onclick="playPuzzle()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <!--div style="height: 297px; background-color: rgb(220, 53, 69);"></div-->
+                <div class="text-center"><i class="bi bi-book" style="font-size: 197px; color: rgb(220, 53, 69);"></i></div>
+                <div class="d-grid">
+                    <button class="btn btn btn-outline-primary" type="submit" onclick="playPuzzle()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         Показать результат
                     </button>
                 </div>
-            </div>
-            <div class="col-xl-4 text-center text-secondary my-auto">
-                <h1>Здесь может быть Ваша реклама</h1>
             </div>
         </div>
 
@@ -133,7 +146,8 @@
         }
     </script>
     <script type="text/python" src="./py/chess_brython.py"></script>
-    <script type="text/python" src="./py/tetris.py"></script>  
+    <script type="text/python" src="./py/tetris_brython.py"></script>  
+    <script type="text/python" src="./py/snake_brython.py"></script> 
     <script type="text/javascript" src="./js/ttt.js"></script>
     <script type="text/javascript" src="./js/riddle.js"></script>
     <script src="./bootstrap-5.2.3/bootstrap.bundle.min.js"></script>
