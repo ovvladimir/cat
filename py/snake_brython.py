@@ -1,4 +1,4 @@
-from browser import document, timer, window
+from browser import document, timer
 from random import randrange, choice
 
 
@@ -83,7 +83,6 @@ btn_snake = document["start4"]
 buttons_snake = document["buttons_snake"]
 snake = Snake()
 btn_snake.bind("click", snake.start_snake)
-document.querySelector(".main")
-snake_color = window.getComputedStyle(document.querySelector(".main")).backgroundColor
+snake_color = document.querySelector(".main").style.backgroundColor
 for _ in range(4):
     snake.update()
