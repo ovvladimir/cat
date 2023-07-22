@@ -39,7 +39,9 @@ def play(e):
         try:
             if (dl[move[0]] == dl[move[2]] and dn[move[1]] == dn[move[3]]) or len(move) != 4 or \
                     (9824 > ord(chessman[dn[move[1]] + 1][dl[move[0]] + 1]) > 9817 and player[0] == "белые") or \
-                    (9818 > ord(chessman[dn[move[1]] + 1][dl[move[0]] + 1]) > 9811 and player[0] == "чёрные"):
+                    (9818 > ord(chessman[dn[move[1]] + 1][dl[move[0]] + 1]) > 9811 and player[0] == "чёрные") or \
+                    (chessman[dn[move[3]] + 1][dl[move[2]] + 1] != sp and 9824 > ord(chessman[dn[move[3]] + 1][dl[move[2]] + 1]) > 9817 and player[0] == "чёрные") or \
+                    (chessman[dn[move[3]] + 1][dl[move[2]] + 1] != sp and 9818 > ord(chessman[dn[move[3]] + 1][dl[move[2]] + 1]) > 9811 and player[0] == "белые"):
                 move = sp
             chessman[dn[move[3]] + 1][dl[move[2]] + 1] = chessman[dn[move[1]] + 1][dl[move[0]] + 1]
             chessman[dn[move[1]] + 1][dl[move[0]] + 1] = sp
