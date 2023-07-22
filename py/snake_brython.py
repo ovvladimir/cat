@@ -13,7 +13,7 @@ class Snake:
         self.speed = [1, 0]
         self.trail = []
         self.tail = 3
-        self.tail_color = 'rgb(0, 123, 255)'
+        self.tail_color = "rgb(0, 123, 255)"
         self.food_color = choice(colors)
         tail_snake.innerHTML = f'хвост: {self.tail}'
         self.loop = None
