@@ -1,6 +1,6 @@
 from browser import document
 
-txt = document['txt']
+inp = document['inp']
 out = document['out']
 parent = document['chess']
 btn_start = document["start"]
@@ -44,22 +44,18 @@ for y, row in enumerate(chessman):
         label_list.append(item)
         parent.appendChild(item)
 
-out <= f'Ходят {player[0]}'
-out.style.color = '#198754'
-txt.focus()
-
 
 def text(part, style_color):
+    out.innerHTML = ''
     out <= f'{part}Ходят {player[0]}'
     out.style.color = style_color
-    txt.value = ''
-    txt.focus()
+    inp.value = ''
+    inp.focus()
 
 
 def play(e):
     if e.key == 'Enter':
-        out.innerHTML = ''
-        move = txt.value.lower()
+        move = inp.value.lower()
         try:
             if (dl[move[0]] == dl[move[2]] and dn[move[1]] == dn[move[3]]) or len(move) != 4 or \
                     (player[0] == "белые" and 9824 > ord(chessman[dn[move[1]] + 1][dl[move[0]] + 1]) > 9817) or \
@@ -96,12 +92,9 @@ def start(e=None):
     for i, lst in enumerate(chessman):
         for j, _ in enumerate(lst):
             label_list[int(f'{i}{j}')].text = chessman[i][j]
-    out.innerHTML = ''
-    out <= f'Ходят {player[0]}'
-    out.style.color = '#198754'
-    txt.value = ''
-    txt.focus()
+    text('', '#198754')
 
 
-txt.bind("keydown", play)
+text('', '#198754')
+inp.bind("keydown", play)
 btn_start.bind("click", start)
