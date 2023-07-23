@@ -75,7 +75,7 @@ class Snake:
         self.loop = timer.set_interval(self.update, 200)
 
 
-colors = ['#198754', '#dc3545', '#0dcaf0', '#ffc107', '#fd7e14', '#2526F7', '#d63384']
+colors = ['#198754', '#dc3545', '#0dcaf0', '#ffc107', '#fd7e14', '#6f42c1', '#d63384']
 canvas_snake = document["snake_board"]
 ctx = canvas_snake.getContext("2d")
 tail_snake = document["snake_score"]
