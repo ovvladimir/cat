@@ -13,7 +13,7 @@ class Snake:
         self.speed = [1, 0]
         self.trail = []
         self.tail = 3
-        self.tail_color = "rgb(0, 123, 255)"
+        self.tail_color = "#2526F7"
         self.food_color = choice(colors)
         tail_snake.innerHTML = f'хвост: {self.tail}'
         self.loop = None
@@ -75,7 +75,7 @@ class Snake:
         self.loop = timer.set_interval(self.update, 200)
 
 
-colors = ['#198754', '#ff4136', '#0dcaf0', '#ffc107', '#fd7e14', '#0d6efd', '#d63384']
+colors = ['#198754', '#dc3545', '#0dcaf0', '#ffc107', '#fd7e14', '#2526F7', '#d63384']
 canvas_snake = document["snake_board"]
 ctx = canvas_snake.getContext("2d")
 tail_snake = document["snake_score"]

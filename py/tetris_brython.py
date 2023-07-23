@@ -18,7 +18,7 @@ shapes = [
     [[5, 6, 9, 10]]
 ]
 
-colors = ['#198754', '#ff4136', '#0dcaf0', '#ffc107', '#fd7e14', '#0d6efd', '#d63384']
+colors = ['#198754', '#dc3545', '#0dcaf0', '#ffc107', '#fd7e14', '#2526F7', '#d63384']
 
 w, h = 1, 1
 size, rows = 20, 10
@@ -32,7 +32,7 @@ element5 = document["start3"]
 element6 = document["bottom_click"]
 canvas = element.getContext("2d")
 canvas2 = element2.getContext("2d")
-canvas.strokeStyle = '#0074d9'
+canvas.strokeStyle = '#0d6efd'
 
 
 class Block:
