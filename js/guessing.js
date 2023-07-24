@@ -1,13 +1,15 @@
 function play() {
     const element = document.getElementById("result");
     const answer = parseInt(Math.random() * 100); // [0 - 1] * 100
+    // console.log(answer); // подсказка в консоле или F12
     let userAnswer;
     let min = 0;
     let max = 100;
     let arr = [];
     let name = prompt("Как Вас зовут?");
-    if (name == null) {name = "NoName"};
-    // console.log(answer) // подсказка в консоле или F12
+
+    if (name == null || name.trim() == "") {name = "NoName"};
+    name = name.trim();
 
     for (let user=1; user<=2; user++) {
         if (user == 1) {
