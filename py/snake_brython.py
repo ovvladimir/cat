@@ -14,8 +14,9 @@ class Snake:
         self.trail = []
         self.tail = 3
         self.tail_color = "#2526F7"
+        self.head_color = '#6f42c1'
         self.food_color = choice(colors)
-        tail_snake.innerHTML = f'хвост: {self.tail}'
+        tail_snake.innerHTML = f'хвост: {self.tail - 1}'
         self.loop = None
 
     def update(self):
@@ -23,11 +24,11 @@ class Snake:
         self.snake_y += self.speed[1]
         if self.snake_x < 0 or self.snake_x >= self.cell or self.snake_y < 0 or self.snake_y >= self.cell:
             self.stop_snake()
-            tail_snake.innerHTML = f'Конец игры - хвост: {self.tail}'
+            tail_snake.innerHTML = f'Конец игры - хвост: {self.tail - 1}'
         ctx.fillStyle = snake_color
         ctx.fillRect(0, 0, self.w, self.h)
-        ctx.fillStyle = self.tail_color
         for i in range(len(self.trail)):
+            ctx.fillStyle = self.head_color if i == 0 else self.tail_color
             ctx.fillRect(self.trail[i][0] * self.size, self.trail[i][1] * self.size, self.size - 2, self.size - 2)
         self.trail.insert(0, [self.snake_x, self.snake_y])
         if len(self.trail) > self.tail:
@@ -37,7 +38,7 @@ class Snake:
             self.tail += 1
             self.food_x = randrange(0, self.cell, 1)
             self.food_y = randrange(0, self.cell, 1)
-            tail_snake.innerHTML = f'хвост: {self.tail}'
+            tail_snake.innerHTML = f'хвост: {self.tail - 1}'
             self.food_color = choice(colors)
         ctx.fillStyle = self.food_color
         ctx.fillRect(self.food_x * self.size, self.food_y * self.size, self.size - 2, self.size - 2)
@@ -75,7 +76,7 @@ class Snake:
         self.loop = timer.set_interval(self.update, 200)
 
 
-colors = ['#198754', '#dc3545', '#0dcaf0', '#ffc107', '#fd7e14', '#6f42c1', '#d63384']
+colors = ['#198754', '#dc3545', '#0dcaf0', '#ffc107', '#fd7e14', '#6610f2', '#d63384']
 canvas_snake = document["snake_board"]
 ctx = canvas_snake.getContext("2d")
 tail_snake = document["snake_score"]
