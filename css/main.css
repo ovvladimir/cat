@@ -5,13 +5,10 @@ body {
   min-height: 100vh;
 }
 h1 {text-shadow: 1px 1px white, 2px 2px white, -1px -1px white, -2px -2px white, -1px 1px white, 1px -1px white, -2px 2px white, 2px -2px white, -3px -3px 4px rgba(0,0,0,.3), -3px 3px 4px rgba(0,0,0,.3), 3px 3px 4px rgba(0,0,0,.3), 3px -3px 4px rgba(0,0,0,.3);}
-/*
-h1 {font-size: 5.9vmin;}
-h2 {font-size: 4.0vmin;}
 i {font-size: 3.0vmin;}
 p {font-size: 4.0vmin;}
-label {font-size: 4.0vmin;}
-*/
+h1 {font-size: 5.9vmin;}
+h2 {font-size: 4.0vmin;}
 .text p {text-align: justify; margin-right: 5%;}
 #meow p span {
   display: flex;
