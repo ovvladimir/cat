@@ -14,24 +14,56 @@
     <link rel="stylesheet" href="./css/main.css">
     <script src="./py/brython.min.js"></script>
     <script src="./py/brython_stdlib.js"></script>
+    <script src="./js/jquery-3.6.4.min.js"></script>
 </head>
 <body onload="brython()">
 
     <header class="bg-info">
         <div class="container text-center py-4">
-            <h2>
-                <a class="text-decoration-none" href="http://kireineko.ru/year-2016" target="_blank">Моя семья</a>
-                <span class="text-light">/</span>
-                <a class="text-decoration-none" href="./games.html" class="link">Пять игр</a>
-                <span class="text-light">/</span>
-                <a class="text-decoration-none" href="./guessing.html" class="link">Угадай число</a>
-                <span class="text-light">/</span>
-                <a class="text-decoration-none" href="./index.html" class="link">Главная</a>
-            </h2>
+            <div class="row align-items-center">
+
+                <div class="col-md-auto">
+                    <a href="https://github.com/ovvladimir/cat" target="_blank">
+                    <img src="./img/cat.svg" alt="OV" width="52" height="52">
+                    </a>
+                </div>
+
+                <div class="col">
+                    <h2>
+                        <a class="text-decoration-none" href="http://kireineko.ru/year-2016" target="_blank">Моя семья</a>
+                        <span class="text-light">/</span>
+                        <a class="text-decoration-none" href="./games.html" class="link">Пять игр</a>
+                        <span class="text-light">/</span>
+                        <a class="text-decoration-none" href="./guessing.html" class="link">Угадай число</a>
+                        <span class="text-light">/</span>
+                        <a class="text-decoration-none" href="./index.html" class="link">Главная</a>
+                    </h2>
+                </div>
+
+                <div class="col-md-auto d-flex justify-content-center align-items-center gap-1">
+
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-brightness-high-fill fs-3"></i>
+                    </div>
+            
+                    <div class="form-check form-switch d-flex justify-content-center align-items-center fs-5">
+                        <input class="form-check-input" type="checkbox" role="switch" id="switchChecked">
+                        <label class="form-check-label" for="switchChecked"></label>
+                    </div>
+            
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-moon-stars-fill fs-5"></i>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </header>
 
     <div class="main container-fluid p-5">
+
+        <p id="scrollUp" class="position-fixed bottom-50 end-0 fs-1 me-2" role="button" title="Вверх">&#8679;</p>
+        <p id="scrollDown" class="position-fixed top-50 end-0 fs-1 me-2" role="button" title="Вниз">&#8681;</p>
 
         <div class="text-secondary text-center">
             <h1>Личный сайт Кота</h1>
@@ -134,21 +166,31 @@
     </footer>
 
     <script>
+        // Переключение светлой и темной тем
         const getTheme = localStorage.getItem("theme")
-        if (getTheme) {
-            const setTheme = function (theme) {
-                const formControl = document.querySelector(".main")
-                if (theme === "light") {formControl.style.backgroundColor = "#f8f9fa"; formControl.style.color = "#212529"}
-                else {formControl.style.backgroundColor = "#212529"; formControl.style.color = "#f8f9fa"}
-            }
-            setTheme(getTheme)
+        const switchChecked = document.getElementById("switchChecked")
+        
+        const setTheme = function (theme) {
+            const formControl = document.querySelector(".main")
+            const colorBi = document.querySelector(".container")
+            if (theme === "dark") {formControl.style.backgroundColor = "#212529"; formControl.style.color = "#f8f9fa"; colorBi.style.color = "#0d6efd"; switchChecked.checked = true}
+            else {formControl.style.backgroundColor = "#f8f9fa"; formControl.style.color = "#212529"; colorBi.style.color = "#fff"; switchChecked.checked = false}
         }
+        setTheme(getTheme)
+    
+        switchChecked.addEventListener("change", function(e) {
+            let newTheme = e.target.checked  // false or true
+            if (newTheme) { newTheme = "dark" } else { newTheme = "light" }
+            setTheme(newTheme)
+            localStorage.setItem("theme", newTheme)
+        })
     </script>
     <script type="text/python" src="./py/chess_brython.py"></script>
     <script type="text/python" src="./py/tetris_brython.py"></script>  
     <script type="text/python" src="./py/snake_brython.py"></script> 
     <script type="text/javascript" src="./js/ttt.js"></script>
     <script type="text/javascript" src="./js/riddle.js"></script>
+    <script src="./js/main_jquery.js"></script>
     <script src="./bootstrap-5.2.3/bootstrap.bundle.min.js"></script>
 </body>
 </html>
