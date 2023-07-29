@@ -18,9 +18,9 @@ class Games {
         this.step = false;
         this.initBound = this.init.bind(this);
 
-		this.gameAtop = document.createElement('span');
-		this.gameAtop.style.position = 'absolute';
-		this.game.appendChild(this.gameAtop);
+		this.gameStop = document.createElement('span');
+		this.gameStop.style.position = 'absolute';
+		this.game.appendChild(this.gameStop);
     }
 
     init(e) {
@@ -135,8 +135,8 @@ class Games {
 
     newGame() {
         this.step = false;
-        this.result.innerText = "";
-		this.gameAtop.innerHTML = "";
+        this.result.innerText = "\u00A0";
+		this.gameStop.innerHTML = "";
         this.sells.forEach((item) => {
             item.innerHTML = "";
             item.classList.remove("x", "o");
@@ -154,7 +154,7 @@ class Games {
 				this.sells[this.arr[i][2]].classList.contains("o")
 			) {
 				gameOver = true;
-				new Line(this.cord[i]).stepLine(this.gameAtop);
+				new Line(this.cord[i]).stepLine(this.gameStop);
 				this.result.innerText = "Выиграл Кот";
 				this.game.removeEventListener("click", this.initBound);
 				this.step = true;
@@ -165,7 +165,7 @@ class Games {
 				this.sells[this.arr[i][2]].classList.contains("x")
 			) {
 				gameOver = true;
-				new Line(this.cord[i]).stepLine(this.gameAtop);
+				new Line(this.cord[i]).stepLine(this.gameStop);
 				this.result.innerText = "Выиграли Вы";
 				this.game.removeEventListener("click", this.initBound);
 				break;
