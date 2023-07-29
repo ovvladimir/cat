@@ -1,5 +1,5 @@
 // Прокрутка страницы вверх и вниз jquery
-let forAll = 100
+let forAll = 150
 if ($(window).scrollTop() > forAll) $("#scrollUp").fadeIn('slow');
 $(window).scroll(function() {
     if ($(window).scrollTop() < forAll) $("#scrollUp").fadeOut('slow');
