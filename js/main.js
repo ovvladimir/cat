@@ -11,7 +11,7 @@ window.onload = function() {
     const btnUp = document.getElementById('scrollUp');
     const btnDown = document.getElementById('scrollDown');
     const elem = document.documentElement;
-    const indent = 50;
+    const indent = 100;
     scrollUp.hidden = (scrollY < indent);
     scrollDown.hidden = (scrollY > (elem.scrollHeight - innerHeight - indent));
     // Прокрутка вверх-вниз
