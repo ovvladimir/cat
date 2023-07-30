@@ -1,9 +1,9 @@
 // Звук
 function soundClick() {
-    /*h6:hover span {*/
-    var audio = new Audio();
-    audio.src = 'img/cat.mp3';
-    audio.autoplay = true;
+    const audio = new Audio();
+    audio.src = './img/cat.mp3';
+    audio.volume = 0.3;
+    audio.play();
 }
 
 // Прокрутка страницы вверх и вниз
@@ -25,6 +25,7 @@ const arrows = function() {
     })
 }
 arrows()
+
 /*
 // Прокрутка страницы вверх и вниз jquery
 let forAll = 150
