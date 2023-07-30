@@ -7,11 +7,11 @@ function soundClick() {
 }
 
 // Прокрутка страницы вверх и вниз
-window.onload = function() {
+const arrows = function() {
     const btnUp = document.getElementById('scrollUp');
     const btnDown = document.getElementById('scrollDown');
     const elem = document.documentElement;
-    const indent = 100;
+    const indent = 50;
     scrollUp.hidden = (scrollY < indent);
     scrollDown.hidden = (scrollY > (elem.scrollHeight - innerHeight - indent));
     // Прокрутка вверх-вниз
@@ -24,21 +24,23 @@ window.onload = function() {
         // console.log((elem.scrollHeight - innerHeight) + " " + scrollY)
     })
 }
-
+arrows()
 /*
 // Прокрутка страницы вверх и вниз jquery
-let forAll = 100
-if ($(window).scrollTop() >= forAll) $("#scrollUp").fadeIn('slow');
+let forAll = 150
+if ($(window).scrollTop() > forAll) $("#scrollUp").fadeIn('slow')
+else $("#scrollUp").fadeOut('slow');
 $(window).scroll(function() {
-    if ($(window).scrollTop() <= forAll) $("#scrollUp").fadeOut('slow');
+    if ($(window).scrollTop() < forAll) $("#scrollUp").fadeOut('slow');
     else $("#scrollUp").fadeIn('slow');
 });
 
-if ($(window).scrollTop() + $(window).height() <= $(document).height() - forAll) $("#scrollDown").fadeIn('slow');
+if ($(window).scrollTop() + $(window).height() < $(document).height() - forAll) $("#scrollDown").fadeIn('slow');
 $(window).scroll(function() {
-    if ($(window).scrollTop() + $(window).height() >= $(document).height() - forAll) $("#scrollDown").fadeOut('slow');
+    if ($(window).scrollTop() + $(window).height() > $(document).height() - forAll) $("#scrollDown").fadeOut('slow');
     else $("#scrollDown").fadeIn('slow');
 });
+
 $("#scrollUp").click(function(){$("html,body").animate({scrollTop: 0}, forAll)});
 $("#scrollDown").click(function(){$("html,body").animate({scrollTop: $(document).height()}, forAll)});
 */
