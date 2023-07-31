@@ -8,10 +8,13 @@ function askQuestion(textBoxId, answer) {
 }
 function playPuzzle() {
     correctAnswersCount = 0;
-    askQuestion("userAnswer1", "капуста");
-    askQuestion("userAnswer2", "лампа");
-    askQuestion("userAnswer2", "лампочка");
-    askQuestion("userAnswer3", "замок");
+    askQuestion("userAnswer1", "Brython");
+    askQuestion("userAnswer1", "brython");
+    askQuestion("userAnswer2", "Bootstrap");
+    askQuestion("userAnswer2", "bootstrap");
+    askQuestion("userAnswer3", "html");
+    askQuestion("userAnswer3", "css");
+    askQuestion("userAnswer3", "javascript");
 
     document.getElementById("result").innerHTML = 
     "<p class='text-primary'>Количество правильных ответов: <span class='text-danger'>" + correctAnswersCount + "</span></p>"
