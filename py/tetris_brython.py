@@ -144,8 +144,6 @@ class Game:
     def update(self):
         canvas.clearRect(0, 0, 202, 402)
         canvas2.clearRect(0, 0, 80, 80)
-        canvas.beginPath()
-        canvas2.beginPath()
         for i in range(self.cell):
             for j in range(self.row):
                 # рисуем доску
@@ -167,8 +165,6 @@ class Game:
                     canvas2.fillStyle = colors[self.next_block.color]
                     canvas2.fillRect(sx + j * size, sy + i * size, size, size)
 
-        canvas.closePath()
-        canvas2.closePath()
         element3.innerHTML = "очки: " + str(self.score)
         element4.innerHTML = "Игра"
 
