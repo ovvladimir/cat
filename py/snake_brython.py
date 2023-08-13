@@ -25,8 +25,7 @@ class Snake:
         if self.snake_x < 0 or self.snake_x >= self.cell or self.snake_y < 0 or self.snake_y >= self.cell:
             self.stop_snake()
             tail_snake.innerHTML = f'Конец игры - хвост: {self.tail - 1}'
-        ctx.fillStyle = snake_color
-        ctx.fillRect(0, 0, self.w, self.h)
+        ctx.clearRect(0, 0, self.w, self.h)
         for i in range(len(self.trail)):
             ctx.fillStyle = self.head_color if i == 0 else self.tail_color
             ctx.fillRect(self.trail[i][0] * self.size, self.trail[i][1] * self.size, self.size - 2, self.size - 2)
@@ -84,6 +83,5 @@ btn_snake = document["start4"]
 buttons_snake = document["buttons_snake"]
 snake = Snake()
 btn_snake.bind("click", snake.start_snake)
-snake_color = document.querySelector(".main").style.backgroundColor
 for _ in range(4):
     snake.update()

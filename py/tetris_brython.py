@@ -54,6 +54,8 @@ class Game:
 
     def __init__(self, cell, row):
         self.field = []
+        self.width, self.height = element.width, element.height
+        self.width2, self.height2 = element2.width, element2.height
         self.cell = cell
         self.row = row
         self.score = 0
@@ -142,8 +144,8 @@ class Game:
             self.block.rotation = old_rotation
 
     def update(self):
-        canvas.clearRect(0, 0, 202, 402)
-        canvas2.clearRect(0, 0, 80, 80)
+        canvas.clearRect(0, 0, self.width, self.height)
+        canvas2.clearRect(0, 0, self.width2, self.height2)
         for i in range(self.cell):
             for j in range(self.row):
                 # рисуем доску
