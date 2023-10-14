@@ -5,10 +5,17 @@ body {
   min-height: 100vh;
 }
 h1 {text-shadow: 1px 1px white, 2px 2px white, -1px -1px white, -2px -2px white, -1px 1px white, 1px -1px white, -2px 2px white, 2px -2px white, -3px -3px 4px rgba(0,0,0,.3), -3px 3px 4px rgba(0,0,0,.3), 3px 3px 4px rgba(0,0,0,.3), 3px -3px 4px rgba(0,0,0,.3);}
+/*
 i {font-size: 3.0vmin;}
 p {font-size: 4.0vmin;}
 h1 {font-size: 5.9vmin;}
 h2 {font-size: 4.0vmin;}
+*/
+i {font-size: clamp(12px, 3cqi, 22px);}
+p {font-size: clamp(16px, 4cqi, 30px);}
+h1 {font-size: clamp(18px, 6cqi, 50px);}
+h2 {font-size: clamp(16px, 4cqi, 30px);}
+
 .text p {text-align: justify; margin-right: 5%;}
 #meow span {
   display: flex;
