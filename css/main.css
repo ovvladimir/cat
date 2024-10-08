@@ -100,3 +100,31 @@ body:hover span {
   width: 50px;
   height: 50px;
 }
+#top_menu > a {
+  position: relative;
+}
+#top_menu > a:after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  margin: -5px 0 0 -5px;
+  width: 10px; height: 10px;
+  border-radius: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  opacity: 0;
+}
+  @-webkit-keyframes sun {
+  0% { margin: -5px 0 0 -5px; width: 10px; height: 10px; opacity: 0; }
+  50% { margin: -50px 0 0 -50px; width: 100px; height: 100px; opacity: .15; } 
+  100% { margin: -80px 0 0 -80px; width: 160px; height: 160px; opacity: 0; }
+}
+@keyframes sun {
+  0% { margin: -5px 0 0 -5px; width: 10px; height: 10px; opacity: 0; }
+  50% { margin: -50px 0 0 -50px; width: 100px; height: 100px; opacity: .15; } 
+  100% { margin: -80px 0 0 -80px; width: 160px; height: 160px; opacity: 0; }
+}
+#top_menu > a:hover:after {
+  -webkit-animation: sun .3s ease;
+  animation: sun .3s ease;
+}
