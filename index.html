@@ -135,6 +135,26 @@
       <i id="up" class="bi bi-arrow-up-square fs-1 me-2 position-fixed bottom-0 end-0" role="button" style="opacity: 0;"></i>
     </div -->
 
+    <script>
+      document.onmousemove = function () {
+        document
+          .getElementsByTagName("body")[0]
+          .insertAdjacentHTML(
+            "beforeEnd",
+            '<img src="./img/cat.webp" alt="" id="cat">'
+          );
+
+        const cat = document.getElementById("cat");
+
+        cat.style.position = "fixed";
+        cat.style.transitionDuration = ".3s";
+
+        document.onmousemove = function (event) {
+          cat.style.left = event.clientX + 20 + "px";
+          cat.style.top = event.clientY + 20 + "px";
+        };
+      };
+    </script>
     <script src="./js/color-theme.js"></script>
     <script src="./js/main.js"></script>
     <script src="./bootstrap-5.2.3/bootstrap.bundle.min.js"></script>
