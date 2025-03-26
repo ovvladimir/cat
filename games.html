@@ -59,105 +59,107 @@
         </div>
     </header>
 
-    <div class="main container-fluid">
+    <main>
+        <div class="container-fluid">
 
-        <p id="scrollUp" class="position-fixed bottom-50 stsrt-0 fs-1" style="margin-left: -0.75rem !important;" role="button" title="Вверх">&#8679;</p>
-        <p id="scrollDown" class="position-fixed top-50 stsrt-0 fs-1" style="margin-left: -0.75rem !important;" role="button" title="Вниз">&#8681;</p>
+            <p id="scrollUp" class="position-fixed bottom-50 stsrt-0 fs-1" style="margin-left: -0.75rem !important;" role="button" title="Вверх">&#8679;</p>
+            <p id="scrollDown" class="position-fixed top-50 stsrt-0 fs-1" style="margin-left: -0.75rem !important;" role="button" title="Вниз">&#8681;</p>
 
-        <div class="text-secondary text-center py-4">
-            <h1>Личный сайт Кота</h1>
-        </div>
-
-        <div class="row row-cols-xl-1 row-cols-xl-2 row-cols-xl-3 g-4 ms-sm-4 ms-0">
-            <div class="col">
-                <h2 class="text-primary">Шахматы</h2>
-                <div id="chess" class="d-flex flex-wrap"></div>
-                <div id="out" class="width">&ensp;</div>
-                <div class="input-group my-1 width">
-                    <input id="inp" type="text" class="form-control" placeholder="Ваш ход (пример, e2e4 -> Enter)">
-                </div>
-                <button class="btn btn-outline-primary width" id="start" type="button">НОВАЯ ИГРА</button>
+            <div class="text-secondary text-center py-4">
+                <h1>Личный сайт Кота</h1>
             </div>
-            <div class="col d-flex flex-column">
-                <h2 class="text-primary text-truncate">Крестики-Нолики</h2>
-                <div class="ttt d-flex flex-wrap"></div>
-                <div class="result text-success fs-2 my-auto">&ensp;</div>
-                <button class="btn btn-outline-primary width" id="start2" type="button" >НОВАЯ ИГРА</button>
-            </div>
-            <div class="col">
-                <h2 class="text-primary">Тетрис</h2>
-                <div class="row width">
-                    <div class="col-7">
-                        <canvas width="202" height="402" id="tetris"></canvas>
+
+            <div class="row row-cols-xl-1 row-cols-xl-2 row-cols-xl-3 g-4 ms-sm-4 ms-0">
+                <div class="col">
+                    <h2 class="text-primary">Шахматы</h2>
+                    <div id="chess" class="d-flex flex-wrap"></div>
+                    <div id="out" class="width">&ensp;</div>
+                    <div class="input-group my-1 width">
+                        <input id="inp" type="text" class="form-control" placeholder="Ваш ход (пример, e2e4 -> Enter)">
                     </div>
-                    <div class="col-5 text-center">
-                        <canvas class="mt-2" width="80" height="80" id="tetris2"></canvas>
-                        <div class="text-primary fs-4 my-4" id="score"></div>
-                        <div class="text-success fs-5" id="over"></div>
-                        <div class="mt-4" id="bottom_click">
-                            <button class="btn btn-primary" id="W">W</button><br>
-                            <button class="btn btn-primary me-2" id="A">A</button>
-                            <button class="btn btn-primary ms-2" id="D">D</button><br>
-                            <button class="btn btn-primary" id="S">S</button>
+                    <button class="btn btn-outline-primary width" id="start" type="button">НОВАЯ ИГРА</button>
+                </div>
+                <div class="col d-flex flex-column">
+                    <h2 class="text-primary text-truncate">Крестики-Нолики</h2>
+                    <div class="ttt d-flex flex-wrap"></div>
+                    <div class="result text-success fs-2 my-auto">&ensp;</div>
+                    <button class="btn btn-outline-primary width" id="start2" type="button" >НОВАЯ ИГРА</button>
+                </div>
+                <div class="col">
+                    <h2 class="text-primary">Тетрис</h2>
+                    <div class="row width">
+                        <div class="col-7">
+                            <canvas width="202" height="402" id="tetris"></canvas>
+                        </div>
+                        <div class="col-5 text-center">
+                            <canvas class="mt-2" width="80" height="80" id="tetris2"></canvas>
+                            <div class="text-primary fs-4 my-4" id="score"></div>
+                            <div class="text-success fs-5" id="over"></div>
+                            <div class="mt-4" id="bottom_click">
+                                <button class="btn btn-primary" id="W">W</button><br>
+                                <button class="btn btn-primary me-2" id="A">A</button>
+                                <button class="btn btn-primary ms-2" id="D">D</button><br>
+                                <button class="btn btn-primary" id="S">S</button>
+                            </div>
                         </div>
                     </div>
+                    <button class="btn btn-outline-primary mt-4 width" id="start3" type="button" >НОВАЯ ИГРА</button>
                 </div>
-                <button class="btn btn-outline-primary mt-4 width" id="start3" type="button" >НОВАЯ ИГРА</button>
-            </div>
-        </div>
-
-        <div class="row g-4 pt-4 ms-sm-4 ms-0">
-            <div class="col-xl-4">
-                <h2 class="text-primary">Змейка</h2>
-                <canvas id="snake_board" width="360" height="360"></canvas>
-                <div id="snake_score" class="text-center text-success fs-2 width">хвост: 2</div>
-                <div class="text-center my-3 width" id="buttons_snake">
-                    <button class="btn btn-primary" id="kW">W</button><br>
-                    <button class="btn btn-primary me-3" id="kA">A</button>
-                    <button class="btn btn-primary ms-3" id="kD">D</button><br>
-                    <button class="btn btn-primary" id="kS">S</button>
-                </div>
-                <button class="btn btn-outline-primary width" id="start4" type="button" >НОВАЯ ИГРА</button>
             </div>
 
-            <div class="col-xl-8 d-flex flex-column" style="padding-right: clamp(2rem, 10vw, 6rem); text-align: justify;">
-                <h2 class="text-primary">Вопросы</h2>
-                <label class="form-label fs-2" for="userAnswer1">С помощью какой библиотеки реализована работа кода Python на этой странице?</label>
-                <div class="input-group">
-                    <input type="text" class="form-control form-control-lg" placeholder="Введите ответ" id="userAnswer1">
+            <div class="row g-4 pt-4 ms-sm-4 ms-0">
+                <div class="col-xl-4">
+                    <h2 class="text-primary">Змейка</h2>
+                    <canvas id="snake_board" width="360" height="360"></canvas>
+                    <div id="snake_score" class="text-center text-success fs-2 width">хвост: 2</div>
+                    <div class="text-center my-3 width" id="buttons_snake">
+                        <button class="btn btn-primary" id="kW">W</button><br>
+                        <button class="btn btn-primary me-3" id="kA">A</button>
+                        <button class="btn btn-primary ms-3" id="kD">D</button><br>
+                        <button class="btn btn-primary" id="kS">S</button>
+                    </div>
+                    <button class="btn btn-outline-primary width" id="start4" type="button" >НОВАЯ ИГРА</button>
                 </div>
-                <label class="form-label fs-2" for="userAnswer2">Какой CSS-фреймворк используется на сайте?</label>
-                <div class="input-group">
-                    <input type="text" class="form-control form-control-lg" placeholder="Введите ответ" id="userAnswer2">
-                </div>
-                <label class="form-label fs-2" for="userAnswer3">Что обязательно нужно знать для разработки сайтов?</label>
-                <div class="input-group">
-                    <input type="text" class="form-control form-control-lg" placeholder="Введите ответ" id="userAnswer3">
-                </div>
-                <div class="text-center my-auto"><i class="bi bi-book" style="font-size: 5rem; color: rgb(220, 53, 69);"></i></div>
-                <div class="d-grid">
-                    <button class="btn btn btn-outline-primary" type="submit" onclick="playPuzzle()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        ПОКАЗАТЬ РЕЗУЛЬТАТ
-                    </button>
-                </div>
-            </div>
-        </div>
-        <br>
-        
-    </div>
 
-    <!-- Start Modal -->
-    <div class="modal fade" id="staticBackdrop" role="dialog" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body text-center p-4" id="result"></div>
-                <div class="modal-footer p-1">
-                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                <div class="col-xl-8 d-flex flex-column" style="padding-right: clamp(2rem, 10vw, 6rem); text-align: justify;">
+                    <h2 class="text-primary">Вопросы</h2>
+                    <label class="form-label fs-2" for="userAnswer1">С помощью какой библиотеки реализована работа кода Python на этой странице?</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="Введите ответ" id="userAnswer1">
+                    </div>
+                    <label class="form-label fs-2" for="userAnswer2">Какой CSS-фреймворк используется на сайте?</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="Введите ответ" id="userAnswer2">
+                    </div>
+                    <label class="form-label fs-2" for="userAnswer3">Что обязательно нужно знать для разработки сайтов?</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="Введите ответ" id="userAnswer3">
+                    </div>
+                    <div class="text-center my-auto"><i class="bi bi-book" style="font-size: 5rem; color: rgb(220, 53, 69);"></i></div>
+                    <div class="d-grid">
+                        <button class="btn btn btn-outline-primary" type="submit" onclick="playPuzzle()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            ПОКАЗАТЬ РЕЗУЛЬТАТ
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            
+        </div>
+
+        <!-- Start Modal -->
+        <div class="modal fade" id="staticBackdrop" role="dialog" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body text-center p-4" id="result"></div>
+                    <div class="modal-footer p-1">
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Modal-->
+        <!-- End Modal-->
+    </main>
 
     <footer>
         <div class="container-fluid bg-danger text-light text-center py-4">
@@ -171,7 +173,7 @@
         const switchChecked = document.getElementById("switchChecked")
         
         const setTheme = function (theme) {
-            const formControl = document.querySelector(".main")
+            const formControl = document.querySelector("main")
             const colorBi = document.querySelector(".container")
             if (theme === "dark") {formControl.style.backgroundColor = "#212529"; formControl.style.color = "#f8f9fa"; colorBi.style.color = "#0d6efd"; switchChecked.checked = true}
             else {formControl.style.backgroundColor = "#f8f9fa"; formControl.style.color = "#212529"; colorBi.style.color = "#fff"; switchChecked.checked = false}
@@ -194,3 +196,34 @@
     <script src="./bootstrap-5.2.3/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+<!--
+            <div class="col-xl-8" style="padding-right: clamp(2rem, 10vw, 6rem); text-align: justify; z-index: 0;">
+                <h2 class="text-primary">Вопросы</h2>
+
+                <div class="d-flex flex-column position-relative">
+                    <div class="m-5">
+                        <label class="form-label fs-2" for="userAnswer1">С помощью какой библиотеки реализована работа кода Python на этой странице?</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control form-control-lg" placeholder="Введите ответ" id="userAnswer1">
+                        </div>
+                        <label class="form-label fs-2" for="userAnswer2">Какой CSS-фреймворк используется на сайте?</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control form-control-lg" placeholder="Введите ответ" id="userAnswer2">
+                        </div>
+                        <label class="form-label fs-2" for="userAnswer3">Что обязательно нужно знать для разработки сайтов?</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control form-control-lg" placeholder="Введите ответ" id="userAnswer3">
+                        </div>
+                        <div class="text-center my-auto"><i class="bi bi-book" style="font-size: 5.8rem; color: rgb(220, 53, 69);"></i></div>
+                        <div class="d-grid">
+                            <button class="btn btn btn-outline-primary" type="submit" onclick="playPuzzle()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                ПОКАЗАТЬ РЕЗУЛЬТАТ
+                            </button>
+                        </div>
+                    </div>
+                    <svg style="position: absolute; z-index: -1" width="100%" height="100%" viewBox="0 0 623 942" preserveAspectRatio="none" fill="none" stroke="#0d6efd" stroke-width="1px" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M569.703 1.285H57.353A30.5 30.5 0 0 0 31.92 14.949L6.426 53.462A30.5 30.5 0 0 0 1.36 70.297v801.441a30.502 30.502 0 0 0 5.067 16.836l22.528 34.032a40.5 40.5 0 0 0 33.771 18.145h501.259a40.5 40.5 0 0 0 34.906-19.961l19.256-32.726a30.503 30.503 0 0 0 4.213-15.467V69.439c0-5.44-1.455-10.78-4.213-15.468L595.99 16.317a30.5 30.5 0 0 0-26.287-15.032Z"></path>
+                    </svg>
+                </div>
+-->

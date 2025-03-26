@@ -5,7 +5,7 @@
     return document.querySelector(".active").getAttribute('data-bs-theme-value')
   }
   const setTheme = function (theme) {
-    const formControl = document.querySelector(".main")
+    const formControl = document.querySelector("main")
     if (theme === "dark") {formControl.style.backgroundColor = "#212529"; formControl.style.color = "#f8f9fa"}
     else {formControl.style.backgroundColor = "#f8f9fa"; formControl.style.color = "#212529"}
   }
