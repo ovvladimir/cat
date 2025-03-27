@@ -70,8 +70,8 @@
                 <h1>Личный сайт Кота</h1>
             </div>
 
-            <div class="row row-cols-xl-1 row-cols-xl-2 row-cols-xl-3 g-4 ms-sm-4 ms-0">
-                <div class="col">
+            <div class="row g-4 ms-4">
+                <div class="col-xxl-4 col-lg-6 col-sm-12">
                     <h2 class="text-primary">Шахматы</h2>
                     <div id="chess" class="d-flex flex-wrap"></div>
                     <div id="out" class="width">&ensp;</div>
@@ -80,13 +80,15 @@
                     </div>
                     <button class="btn btn-outline-primary width" id="start" type="button">НОВАЯ ИГРА</button>
                 </div>
-                <div class="col d-flex flex-column">
+
+                <div class="col-xxl-4 col-lg-6 col-sm-12 d-flex flex-column">
                     <h2 class="text-primary text-truncate">Крестики-Нолики</h2>
                     <div class="ttt d-flex flex-wrap"></div>
                     <div class="result text-success fs-2 my-auto">&ensp;</div>
                     <button class="btn btn-outline-primary width" id="start2" type="button" >НОВАЯ ИГРА</button>
                 </div>
-                <div class="col">
+
+                <div class="col-xxl-4 col-lg-6 col-sm-12">
                     <h2 class="text-primary">Тетрис</h2>
                     <div class="row width">
                         <div class="col-7">
@@ -106,10 +108,8 @@
                     </div>
                     <button class="btn btn-outline-primary mt-4 width" id="start3" type="button" >НОВАЯ ИГРА</button>
                 </div>
-            </div>
 
-            <div class="row g-4 pt-4 ms-sm-4 ms-0">
-                <div class="col-xl-4">
+                <div class="col-xxl-4 col-lg-6 col-sm-12">
                     <h2 class="text-primary">Змейка</h2>
                     <canvas id="snake_board" width="360" height="360"></canvas>
                     <div id="snake_score" class="text-center text-success fs-2 width">хвост: 2</div>
@@ -122,7 +122,7 @@
                     <button class="btn btn-outline-primary width" id="start4" type="button" >НОВАЯ ИГРА</button>
                 </div>
 
-                <div class="col-xl-8 d-flex flex-column" style="padding-right: clamp(2rem, 10vw, 6rem); text-align: justify;">
+                <div class="col-xxl-8 col-lg-12 d-flex flex-column" style="padding-right: clamp(2rem, 10vw, 6rem); text-align: justify;">
                     <h2 class="text-primary">Вопросы</h2>
                     <label class="form-label fs-2" for="userAnswer1">С помощью какой библиотеки реализована работа кода Python на этой странице?</label>
                     <div class="input-group">
