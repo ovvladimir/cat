@@ -17,6 +17,7 @@ h1 {font-size: clamp(18px, 6cqi, 50px);}
 h2 {font-size: clamp(16px, 4cqi, 30px);}
 
 .text p {text-align: justify; margin-right: 5%;}
+.jus {text-align: justify;}
 #meow span {
   display: flex;
   display: inline-block;
