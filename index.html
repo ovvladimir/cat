@@ -147,10 +147,12 @@
             '<img src="./img/cat.webp" alt="" id="cat">'
           );
 
-        const cat = document.getElementById("cat");
+        const cat = document.querySelector("#cat");
 
         cat.style.position = "fixed";
         cat.style.transitionDuration = ".3s";
+        cat.style.width = "24px";
+        cat.style.height = "24px";
 
         document.onmousemove = function (event) {
           cat.style.left = event.clientX + 20 + "px";
