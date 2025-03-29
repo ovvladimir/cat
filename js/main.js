@@ -8,8 +8,8 @@ function soundClick() {
 
 // Прокрутка страницы вверх и вниз
 const arrows = function() {
-    const btnUp = document.getElementById('scrollUp');
-    const btnDown = document.getElementById('scrollDown');
+    const btnUp = document.querySelector('#scrollUp');
+    const btnDown = document.querySelector('#scrollDown');
     const elem = document.documentElement;
     const indent = 50;
     scrollUp.hidden = (scrollY < indent);

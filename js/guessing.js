@@ -1,5 +1,5 @@
 function play() {
-    const element = document.getElementById("result");
+    const element = document.querySelector("#result");
     const answer = parseInt(Math.random() * 100); // [0 - 1] * 100
     // console.log(answer); // подсказка в консоле или F12
     let userAnswer;

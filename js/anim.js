@@ -49,7 +49,7 @@ class Sprite {
     }
 }
 
-let canvas = document.getElementById('canvas');
+let canvas = document.querySelector('#canvas');
 canvas.width = 400;
 canvas.height = 199.5;
 
