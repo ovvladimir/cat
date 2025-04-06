@@ -14,6 +14,6 @@ function playPuzzle() {
     askQuestion("userAnswer3", "css");
     askQuestion("userAnswer3", "javascript");
 
-    document.querySelector("#result").innerHTML = 
+    document.querySelector("#result-2").innerHTML = 
     "<p class='text-primary'>Количество правильных ответов: <span class='text-danger'>" + correctAnswersCount + "</span></p>"
 }

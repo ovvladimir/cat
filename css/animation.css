@@ -1,0 +1,15 @@
+:root{
+    --link-color: #a58fe7;
+    --link-color-light: rgba(165, 143, 231, 0.3);
+    --link-color-dark: #623bd5;
+}
+
+#lines-width{display:flex;overflow:visible;flex-direction:row;justify-content:center;align-items:flex-end !important;flex-wrap:nowrap;}
+#lines-1-animation{flex:0 0 8.4%;max-width:8.4%;animation-duration:2s;}
+#lines-2-animation{flex:0 0 17.88%;max-width:17.88%;animation-duration:1.5s;animation-delay:1s;}
+#lines-3-animation{flex:0 0 18.9%;max-width:18.9%;animation-duration:2.2s;animation-delay:.4s;}
+#lines-4-animation{flex:0 0 12.8%;max-width:12.8%;animation-duration:2s;animation-delay:.5s;}
+#lines-5-animation{flex:0 0 16.35%;max-width:16.35%;animation-duration:1.5s;animation-delay:.6s;}
+#lines-6-animation{flex:0 0 25.6%;max-width:25.6%;animation-duration:2s;animation-delay:.8s;}
+.lines-position{text-align:center;animation-name:lines-Filter;transition:0.5s;animation-iteration-count:infinite;animation-direction:alternate-reverse}
+@keyframes lines-Filter{0%{transform:translate(0, 35px);visibility:visible;filter:saturate(1)}60%{transform:translate(0, 0);filter:saturate(1)}80%{transform:translate(0, 0);filter:saturate(10)}100%{transform:translate(0, 0);filter:saturate(20)}}
