@@ -1,3 +1,4 @@
+/*
 class Sprite {
     constructor(options) {
         this.ctx = options.ctx;
@@ -64,3 +65,41 @@ let sprite = new Sprite({
     numberOfFrames: 12,
     ticksPerFrame: 4,
 })
+*/
+
+const canvas = document.getElementById('canvas');
+let cty = canvas.getContext('2d');
+canvas.width = 400;
+canvas.height = 199.5;
+
+let sy = 0, tick_count = 0;
+let sprite = new Image();
+sprite.src = './img/cat-anim.png';
+
+sprite.onload = function() {
+  tick();
+  requestAnimationFrame(tick);
+};
+
+function tick() {
+  if (tick_count > 10) {
+    drawCat();
+    tick_count = 0;
+  }
+  tick_count++;
+  requestAnimationFrame(tick);
+}
+
+function drawCat() {
+  cty.clearRect(0, 0, canvas.width, canvas.height);
+  sy = (sy === 2194.5 ? 0 : sy + 199.5);
+  cty.drawImage(sprite, 0, sy, 400, 199.5, 0, 0, 400, 199.5);
+}
+
+canvas.animate([
+    { transform: 'translateX(100vw)' },
+    { transform: 'translateX(-400px)' }
+  ], {
+    duration: 15000,
+    iterations: Infinity
+  })
