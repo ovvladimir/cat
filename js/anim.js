@@ -93,7 +93,7 @@ function tick() {
 function drawCat() {
   cty.clearRect(0, 0, canvas.width, canvas.height);
   sy = (sy === 2194.5 ? 0 : sy + 199.5);
-  cty.drawImage(sprite, 0, sy, 400, 199.5, 0, 0, 400, 199.5);
+  cty.drawImage(sprite, 0, sy, 400, 199.5, 0, 20, 400, 199.5);
 }
 
 canvas.animate([
