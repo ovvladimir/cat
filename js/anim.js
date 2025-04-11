@@ -69,12 +69,17 @@ let sprite = new Sprite({
 
 const canvas = document.getElementById('canvas');
 let cty = canvas.getContext('2d');
-canvas.width = 400;
-canvas.height = 199.5;
 
-let sy = 0, tick_count = 0;
 let sprite = new Image();
 sprite.src = './img/cat-anim.png';
+
+const width = 399; //sprite.width;
+const h = 2393; //sprite.height;
+const height = h / 12;
+canvas.width = width;
+canvas.height = height;
+
+let sy = 0, tick_count = 0;
 
 sprite.onload = function() {
   tick();
@@ -91,14 +96,14 @@ function tick() {
 }
 
 function drawCat() {
-  cty.clearRect(0, 0, canvas.width, canvas.height);
-  sy = (sy === 2194.5 ? 0 : sy + 199.5);
-  cty.drawImage(sprite, 0, sy, 400, 199.5, 0, 20, 400, 199.5);
+  cty.clearRect(0, 0, width, height);
+  sy = (sy === h - height ? 0 : sy + height);
+  cty.drawImage(sprite, 0, sy, width, height, 0, 20, width, height);
 }
 
 canvas.animate([
     { transform: 'translateX(100vw)' },
-    { transform: 'translateX(-400px)' }
+    { transform: `translateX(-${width}px)` }
   ], {
     duration: 15000,
     iterations: Infinity
