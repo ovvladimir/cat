@@ -75,11 +75,12 @@ sprite.src = './img/cat-anim.png';
 
 let width, H, height;
 let sy = 0, tick_count = 0;
+const frame = 12;
 
 sprite.onload = function() {
   width = sprite.width;
   H = sprite.height;
-  height = H / 12;
+  height = H / frame;
   canvas.width = width;
   canvas.height = height;
 
