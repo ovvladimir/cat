@@ -68,43 +68,42 @@ let sprite = new Sprite({
 */
 
 const canvas = document.getElementById('canvas');
-let cty = canvas.getContext('2d');
+let cnv = canvas.getContext('2d');
 
 let sprite = new Image();
 sprite.src = './img/cat-anim.png';
 
-const width = 399; //sprite.width;
-const h = 2393; //sprite.height;
-const height = h / 12;
-canvas.width = width;
-canvas.height = height;
-
+let width, H, height;
 let sy = 0, tick_count = 0;
 
 sprite.onload = function() {
+  width = sprite.width;
+  H = sprite.height;
+  height = H / 12;
+  canvas.width = width;
+  canvas.height = height;
+
   tick();
-  requestAnimationFrame(tick);
-};
 
-function tick() {
-  if (tick_count > 10) {
-    drawCat();
-    tick_count = 0;
-  }
-  tick_count++;
-  requestAnimationFrame(tick);
-}
-
-function drawCat() {
-  cty.clearRect(0, 0, width, height);
-  sy = (sy === h - height ? 0 : sy + height);
-  cty.drawImage(sprite, 0, sy, width, height, 0, 20, width, height);
-}
-
-canvas.animate([
+  canvas.animate([
     { transform: 'translateX(100vw)' },
     { transform: `translateX(-${width}px)` }
   ], {
     duration: 15000,
     iterations: Infinity
-  })
+  });
+
+  requestAnimationFrame(tick);
+}
+
+function tick() {
+  if (tick_count > 10) { drawCat(); tick_count = 0 }
+  tick_count++;
+  requestAnimationFrame(tick);
+}
+
+function drawCat() {
+  cnv.clearRect(0, 0, width, height);
+  sy = (sy === H - height ? 0 : sy + height);
+  cnv.drawImage(sprite, 0, sy, width, height, 0, 20, width, height);
+}
