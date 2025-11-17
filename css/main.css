@@ -130,3 +130,4 @@ body:hover span {
   -webkit-animation: sun .3s ease;
   animation: sun .3s ease;
 }
+.swg_text {width:100%;height:100%;white-space:pre-line;overflow:auto;scrollbar-width:thin;scrollbar-color: #A5A5A5 #212529;font-size:1.8rem;}
