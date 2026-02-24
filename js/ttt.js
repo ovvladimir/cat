@@ -24,9 +24,10 @@ class Games {
     }
 
     init(e) {
-		if (e.target.innerHTML === '') {
+		const targetX = e.target;
+		if (targetX.innerHTML === '' && targetX == '[object HTMLDivElement]') {
 			if (!this.step) {
-				new Cross().stepCross(e.target);
+				new Cross().stepCross(targetX);
 				this.step = !this.step;
 				if (!this.win()) {
 					const emptyCells = this.getEmptyCells();
@@ -62,13 +63,13 @@ class Games {
     }
 	
 	getEmptyCells() {
-        const emptyCells = [];
+        const emptyCell = [];
         this.sells.forEach((cell, index) => {
             if (cell.innerHTML === '') {
-                emptyCells.push(index);
+                emptyCell.push(index);
             }
         });
-        return emptyCells;
+        return emptyCell;
     }
 
     getBoardState() {
